@@ -1,6 +1,6 @@
 import { Button } from "../../components/ui/Button";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
-import storyImage from "../../assets/home/imgFrame136.jpg";
+import storyImage from "../../assets/home/brandStory.jpg";
 
 const POINTS = [
   "We believe swimwear should make you feel confident, comfortable, and effortlessly you.",

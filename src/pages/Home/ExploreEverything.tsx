@@ -143,7 +143,7 @@ export function ExploreEverything() {
               src={cat.image}
               alt={cat.label}
               aria-hidden={i !== active}
-              className={`absolute inset-0 h-full w-full object-cover transition-[opacity,scale] duration-1000 ease-out group-hover:scale-[1.04] ${
+              className={`absolute inset-0 h-full w-full object-cover object-top transition-[opacity,scale] duration-1000 ease-out group-hover:scale-[1.04] ${
                 i === active ? "opacity-100" : "opacity-0"
               }`}
             />
