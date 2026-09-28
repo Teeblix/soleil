@@ -158,7 +158,7 @@ export function Footer() {
   return (
     <footer className="flex w-full flex-col items-center justify-end bg-cream px-5 py-16 md:p-20">
       <div className="flex w-full max-w-[1280px] flex-col gap-16 md:gap-[88px]">
-        <div className="flex w-full flex-col items-start justify-between gap-12 md:flex-row">
+        <div className="flex w-full flex-col items-start justify-between gap-12 lg:flex-row">
           <div className="flex w-full max-w-[487px] flex-col items-start gap-6">
             <div className="flex flex-col items-start gap-3 text-ink">
               <p className="font-display text-[24px] font-medium">EXCLUSIVE ACCESS, JUST FOR YOU</p>
@@ -196,7 +196,7 @@ export function Footer() {
               </p>
             </form>
           </div>
-          <div className="flex items-start gap-16 sm:gap-[200px]">
+          <div className="flex items-start gap-16 sm:gap-24 lg:gap-[200px]">
             <FooterLinkList title="SHOP" links={SHOP_LINKS} />
             <FooterLinkList title="BRAND" links={BRAND_LINKS} />
           </div>

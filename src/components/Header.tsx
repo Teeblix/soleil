@@ -124,12 +124,12 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
       }`}
       onMouseLeave={() => setMenuOpen(false)}
     >
-      <div className={`relative z-10 flex items-center justify-between px-5 py-6 md:px-20 md:pt-6 md:pb-4 ${textColor}`}>
+      <div className={`relative z-10 flex items-center justify-between px-5 py-6 lg:px-20 lg:pt-6 lg:pb-4 ${textColor}`}>
         <Link to="/" className="block h-6 w-[127px] shrink-0" onMouseEnter={() => setMenuOpen(false)}>
           <img src={logo} alt="Soleil" className="h-full w-full object-contain" />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-9 lg:flex">
           <button
             className="group relative flex items-center gap-1.5 text-[18px]"
             onMouseEnter={() => setMenuOpen(true)}
@@ -159,14 +159,14 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           ))}
         </nav>
 
-        <div className="hidden items-center gap-14 md:flex" onMouseEnter={() => setMenuOpen(false)}>
+        <div className="hidden items-center gap-10 lg:flex xl:gap-14" onMouseEnter={() => setMenuOpen(false)}>
           <IconButton label="Search" icon={icons.search} />
           <IconButton label="Account" icon={icons.user} to="/account" />
           <IconButton label="Cart" icon={icons.bag} to="/cart" />
         </div>
 
         <button
-          className={`md:hidden ${textColor}`}
+          className={`lg:hidden ${textColor}`}
           aria-label="Menu"
           onClick={() => setMobileOpen((v) => !v)}
         >
@@ -186,7 +186,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute inset-x-0 top-full hidden bg-[#f0f0ef] text-ink md:block"
+            className="absolute inset-x-0 top-full hidden bg-[#f0f0ef] text-ink lg:block"
           >
             <div className="mx-auto w-full max-w-[1280px] border-t border-line px-0 pb-12 pt-10">
               <div className="flex items-stretch">
@@ -225,7 +225,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
       </AnimatePresence>
 
       {mobileOpen && (
-        <div className="flex flex-col gap-4 border-t border-line bg-paper px-5 py-6 text-ink md:hidden">
+        <div className="flex flex-col gap-4 border-t border-line bg-paper px-5 py-6 text-ink lg:hidden">
           {MEGA_MENU[0].links
             .filter((link) => !NAV_LINKS.some((nav) => nav.label === link.label))
             .map((link) => (
