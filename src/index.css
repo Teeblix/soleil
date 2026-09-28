@@ -45,6 +45,23 @@ button {
   animation: marquee 6s linear infinite;
 }
 
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 18%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 18%,
+    #000 82%,
+    transparent 100%
+  );
+}
+
 @keyframes scroll-cue {
   0% {
     transform: translateY(-100%);
