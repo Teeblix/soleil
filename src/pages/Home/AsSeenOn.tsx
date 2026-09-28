@@ -84,7 +84,7 @@ export function AsSeenOn() {
         <div ref={gridRef} className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {ITEMS.map((item) => (
             <RevealItem key={item.id} className="relative h-[400px] w-full overflow-hidden">
-              <img src={item.tile} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              <img src={item.tile} alt="" className="absolute inset-0 h-full w-full object-cover object-top" />
               {playClips && (
                 <video
                   src={item.clip}
@@ -94,7 +94,7 @@ export function AsSeenOn() {
                   muted
                   playsInline
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                 />
               )}
               <div
@@ -109,7 +109,7 @@ export function AsSeenOn() {
                   <img
                     src={item.thumb}
                     alt={item.name}
-                    className="h-[100px] w-[70px] shrink-0 object-cover sm:w-[85px]"
+                    className="h-[100px] w-[70px] shrink-0 object-cover object-top sm:w-[85px]"
                   />
                   <div className="flex min-w-0 flex-col items-start gap-2 text-white">
                     <p className="truncate font-display text-[16px] font-medium sm:text-[18px]">
