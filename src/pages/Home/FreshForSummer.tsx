@@ -4,7 +4,8 @@ import { ProductCard, type ColorVariant } from "./ProductCard";
 
 import p1PinkDefault from "../../assets/home/products/p1PinkDefault.webp";
 import p1PinkHover from "../../assets/home/products/p1PinkHover.webp";
-import p1BlackHover from "../../assets/home/products/p1BlackHover.webp";
+import p1BrownDefault from "../../assets/home/products/p1BrownDefault.webp";
+import p1BrownHover from "../../assets/home/products/p1BrownHover.webp";
 
 import p2Default from "../../assets/home/products/p2Default.webp";
 import p2Hover from "../../assets/home/products/p2Hover.webp";
@@ -16,7 +17,7 @@ import p4Default from "../../assets/home/products/p4Default.webp";
 import p4Hover from "../../assets/home/products/p4Hover.webp";
 
 const PINK = "#FABFD0";
-const BLACK = "#4A2F23";
+const BROWN = "#4A2F23";
 
 type Product = {
   name: string;
@@ -30,7 +31,7 @@ const PRODUCTS: Product[] = [
     price: "$109.50",
     colors: [
       { name: "Pink", swatch: PINK, defaultImage: p1PinkDefault, hoverImage: p1PinkHover },
-      { name: "Black", swatch: BLACK, defaultImage: p1BlackHover, hoverImage: p1BlackHover },
+      { name: "Brown", swatch: BROWN, defaultImage: p1BrownDefault, hoverImage: p1BrownHover },
     ],
   },
   {
