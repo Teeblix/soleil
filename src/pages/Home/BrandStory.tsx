@@ -11,11 +11,11 @@ const POINTS = [
 export function BrandStory() {
   return (
     <section className="flex w-full flex-col items-center px-5 py-16 md:p-20">
-      <Reveal className="flex w-full max-w-[1280px] flex-col items-center gap-10 md:flex-row md:gap-[60px]">
-        <RevealItem className="h-[380px] w-full overflow-hidden md:h-[570px] md:flex-1">
-          <img src={storyImage} alt="Golden hour swimwear" className="h-full w-full object-cover" />
+      <Reveal className="flex w-full max-w-[1280px] flex-col items-center gap-10 lg:flex-row lg:gap-[60px]">
+        <RevealItem className="h-[380px] w-full overflow-hidden md:h-[520px] lg:h-[570px] lg:flex-1">
+          <img src={storyImage} alt="Golden hour swimwear" className="h-full w-full object-cover object-top" />
         </RevealItem>
-        <Reveal className="flex flex-1 flex-col items-start gap-10" stagger={0.15}>
+        <Reveal className="flex w-full flex-col items-start gap-10 lg:flex-1" stagger={0.15}>
           <RevealWords
             text="MADE FOR GOLDEN HOUR DAY & CONFIDENCE"
             className="font-display text-[28px] font-medium sm:text-[40px]"

@@ -93,12 +93,12 @@ export function ExploreEverything() {
 
   return (
     <section className="flex w-full flex-col items-center bg-cream/60 px-5 py-16 md:p-20">
-      <Reveal className="flex w-full max-w-[1280px] flex-col items-center gap-10 md:flex-row md:gap-12" stagger={0.1}>
-        <div className="flex w-full flex-col items-start gap-10 md:max-w-[395px]">
+      <Reveal className="flex w-full max-w-[1280px] flex-col items-center gap-10 lg:flex-row lg:gap-12" stagger={0.1}>
+        <div className="flex w-full flex-col items-start gap-10 lg:max-w-[395px]">
           <div className="flex flex-col items-start gap-4">
             <RevealWords text="EXPLORE EVERYTHING" className="text-[22px] sm:text-[24px]" />
             <RevealItem>
-              <p className="text-[16px] sm:text-[18px]">
+              <p className="max-w-[550px] text-[16px] sm:text-[18px]">
                 Can&apos;t decide? Browse our full collection. From classic cuts to modern fits, find
                 the piece that feels like you.
               </p>
@@ -136,25 +136,28 @@ export function ExploreEverything() {
           </div>
         </div>
 
-        <RevealItem className="group relative h-[420px] w-full overflow-hidden md:h-[600px] md:max-w-[395px]">
-          {CATEGORIES.map((cat, i) => (
-            <img
-              key={cat.label}
-              src={cat.image}
-              alt={cat.label}
-              aria-hidden={i !== active}
-              className={`absolute inset-0 h-full w-full object-cover object-top transition-[opacity,scale] duration-1000 ease-out group-hover:scale-[1.04] ${
-                i === active ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </RevealItem>
+        {/* Tablet sits the image beside its copy; `lg:contents` dissolves this wrapper so desktop keeps one three-column row. */}
+        <div className="flex w-full flex-col gap-10 md:flex-row md:items-end md:gap-10 lg:contents">
+          <RevealItem className="group relative h-[420px] w-full overflow-hidden md:h-[500px] md:flex-[1.15] lg:h-[600px] lg:max-w-[395px] lg:flex-none">
+            {CATEGORIES.map((cat, i) => (
+              <img
+                key={cat.label}
+                src={cat.image}
+                alt={cat.label}
+                aria-hidden={i !== active}
+                className={`absolute inset-0 h-full w-full object-cover object-top transition-[opacity,scale] duration-1000 ease-out group-hover:scale-[1.04] ${
+                  i === active ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </RevealItem>
 
-        <RevealItem className="w-full md:max-w-[395px]">
-          <AnimatePresence mode="wait">
-            <Content key={category.label} category={category} />
-          </AnimatePresence>
-        </RevealItem>
+          <RevealItem className="w-full md:flex-1 lg:max-w-[395px] lg:flex-none">
+            <AnimatePresence mode="wait">
+              <Content key={category.label} category={category} />
+            </AnimatePresence>
+          </RevealItem>
+        </div>
       </Reveal>
     </section>
   );
