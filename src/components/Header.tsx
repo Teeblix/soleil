@@ -213,7 +213,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
                       <img
                         src={image.src}
                         alt=""
-                        className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                        className="h-full w-full object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
                       />
                     </Link>
                   ))}
