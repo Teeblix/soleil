@@ -1,18 +1,18 @@
 import { useRef, type PointerEvent } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "motion/react";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
-import img1 from "../../assets/home/imgFrame74.jpg";
-import img2 from "../../assets/home/imgFrame70.jpg";
-import img3 from "../../assets/home/imgFrame71.jpg";
-import img4 from "../../assets/home/imgFrame72.jpg";
-import img5 from "../../assets/home/imgFrame73.jpg";
+import mayaImg from "../../assets/home/testimonials/maya.jpg";
+import chloeImg from "../../assets/home/testimonials/chloe.jpg";
+import emmaImg from "../../assets/home/testimonials/emma.jpg";
+import zaraImg from "../../assets/home/testimonials/zara.jpg";
+import jessImg from "../../assets/home/testimonials/jess.jpg";
 
 const TESTIMONIALS = [
-  { quote: "Got so many compliments on this... People kept asking where it's from.", name: "Maya S.", image: img1, height: 400, offset: 0 },
-  { quote: "Finally a bikini that stays in place when I'm actually swimming.", name: "Chloe M.", image: img2, height: 302, offset: 49 },
-  { quote: "The fit is so comfortable I forget I'm wearing it.", name: "Emma A.", image: img3, height: 400, offset: 0 },
-  { quote: "This is now my go-to, wore it all summer and it still looks brand new.", name: "Zara J.", image: img4, height: 204, offset: 98 },
-  { quote: "I was nervous about ordering online but the size guide was spot on.", name: "Jess L.", image: img5, height: 302, offset: 49 },
+  { quote: "Got so many compliments on this... People kept asking where it's from.", name: "Maya S.", image: mayaImg, height: 400, offset: 0 },
+  { quote: "Finally a bikini that stays in place when I'm actually swimming.", name: "Chloe M.", image: chloeImg, height: 302, offset: 49 },
+  { quote: "The fit is so comfortable I forget I'm wearing it.", name: "Emma A.", image: emmaImg, height: 400, offset: 0 },
+  { quote: "This is now my go-to, wore it all summer and it still looks brand new.", name: "Zara J.", image: zaraImg, height: 204, offset: 98 },
+  { quote: "I was nervous about ordering online but the size guide was spot on.", name: "Jess L.", image: jessImg, height: 302, offset: 49 },
 ];
 
 const CARD_WIDTH = 302;
