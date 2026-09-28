@@ -7,6 +7,8 @@ import ctaImage from "../../assets/home/hero/readyForTheSun.jpg";
 // The image stands taller than the section so it can drift without ever
 // exposing an edge. It travels exactly its own overhang: 130% tall leaves
 // 30% of the section height spare, which is 23.08% of the image itself.
+// Raising IMAGE_HEIGHT increases both the overhang and the travel, so the
+// two stay locked together and no edge can ever come into view.
 const IMAGE_HEIGHT = "130%";
 const DRIFT = 100 - 100 / 1.3;
 
@@ -20,7 +22,11 @@ export function FinalCta() {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", `-${DRIFT.toFixed(2)}%`]);
+  // Starts lifted and settles back down, so the photo drifts downward as you
+  // scroll down - with the scroll rather than against it - and back up when
+  // you scroll up. It covers that ground far slower than the page moves,
+  // which is what reads as parallax.
+  const y = useTransform(scrollYProgress, [0, 1], [`-${DRIFT.toFixed(2)}%`, "0%"]);
 
   return (
     <section ref={sectionRef} className="relative h-svh w-full overflow-hidden">
