@@ -1,15 +1,24 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useInView, useReducedMotion } from "motion/react";
 import { Button } from "../../components/ui/Button";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
 import bagIcon from "../../assets/common/imgBagLight.svg";
-import tile1 from "../../assets/home/imgFrame9.jpg";
-import thumb1 from "../../assets/home/imgFrame7.jpg";
-import tile2 from "../../assets/home/imgFrame12.jpg";
-import thumb2 from "../../assets/home/imgFrame8.jpg";
-import tile3 from "../../assets/home/imgFrame10.jpg";
-import thumb3 from "../../assets/home/imgFrame11.jpg";
-import tile4 from "../../assets/home/imgFrame13.jpg";
-import thumb4 from "../../assets/home/imgFrame14.jpg";
+
+import celineTile from "../../assets/home/asSeenOn/celineCherryMonokiniTile.jpg";
+import celineThumb from "../../assets/home/asSeenOn/celineCherryMonokiniThumb.jpg";
+import celineClip from "../../assets/home/asSeenOn/celineCherryMonokini.mp4";
+
+import cherkyTile from "../../assets/home/asSeenOn/cherkySideTieTile.jpg";
+import cherkyThumb from "../../assets/home/asSeenOn/cherkySideTieThumb.jpg";
+import cherkyClip from "../../assets/home/asSeenOn/cherkySideTie.mp4";
+
+import arlaTile from "../../assets/home/asSeenOn/arlaOnePieceTile.jpg";
+import arlaThumb from "../../assets/home/asSeenOn/arlaOnePieceThumb.jpg";
+import arlaClip from "../../assets/home/asSeenOn/arlaOnePiece.mp4";
+
+import ginghamTile from "../../assets/home/asSeenOn/ginghamDeiaTile.jpg";
+import ginghamThumb from "../../assets/home/asSeenOn/ginghamDeiaThumb.jpg";
+import ginghamClip from "../../assets/home/asSeenOn/ginghamDeia.mp4";
 
 const ITEMS = [
   {
@@ -17,36 +26,46 @@ const ITEMS = [
     name: "Celine Cherry Monokini",
     price: "$79.50",
     originalPrice: "$95.00",
-    tile: tile1,
-    thumb: thumb1,
+    tile: celineTile,
+    clip: celineClip,
+    thumb: celineThumb,
   },
   {
     id: "cherky-side-tie-bikini",
     name: "Cherky Side-Tie Bikini",
     price: "$39.50",
     originalPrice: "$65.00",
-    tile: tile2,
-    thumb: thumb2,
+    tile: cherkyTile,
+    clip: cherkyClip,
+    thumb: cherkyThumb,
   },
   {
     id: "arla-one-piece",
     name: "Arla One Piece",
     price: "$59.50",
     originalPrice: "$85.00",
-    tile: tile3,
-    thumb: thumb3,
+    tile: arlaTile,
+    clip: arlaClip,
+    thumb: arlaThumb,
   },
   {
     id: "gingham-deia-top",
     name: "Gingham Deia Top",
     price: "$49.99",
-    tile: tile4,
-    thumb: thumb4,
+    tile: ginghamTile,
+    clip: ginghamClip,
+    thumb: ginghamThumb,
   },
 ];
 
 export function AsSeenOn() {
   const [added, setAdded] = useState<string | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  // Clips only mount once the grid nears the viewport, so 2.1MB of video never
+  // touches the initial page load.
+  const nearViewport = useInView(gridRef, { once: true, margin: "300px" });
+  const reduceMotion = useReducedMotion();
+  const playClips = nearViewport && !reduceMotion;
 
   function handleAdd(id: string) {
     setAdded(id);
@@ -62,12 +81,24 @@ export function AsSeenOn() {
             <Button className="sm:w-[221px]">FOLLOW US @SOLEIL</Button>
           </RevealItem>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div ref={gridRef} className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {ITEMS.map((item) => (
             <RevealItem key={item.id} className="relative h-[400px] w-full overflow-hidden">
               <img src={item.tile} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              {playClips && (
+                <video
+                  src={item.clip}
+                  poster={item.tile}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              )}
               <div
-                className="absolute inset-0 backdrop-blur-[2px]"
+                className="absolute inset-0"
                 style={{
                   backgroundImage:
                     "linear-gradient(181deg, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 92%)",
