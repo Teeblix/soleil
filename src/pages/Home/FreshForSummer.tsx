@@ -61,7 +61,7 @@ export function FreshForSummer() {
             <Button to="/products">VIEW ALL</Button>
           </RevealItem>
         </div>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((product) => (
             <RevealItem key={product.name}>
               <ProductCard

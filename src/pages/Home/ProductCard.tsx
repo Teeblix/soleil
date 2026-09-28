@@ -29,7 +29,7 @@ export function ProductCard({ name, price, to, colors }: ProductCardProps) {
   return (
     <div className="flex flex-col items-start gap-3">
       <div
-        className="relative h-[280px] w-full overflow-hidden bg-[#eee] backdrop-blur-[2px] sm:h-[400px]"
+        className="relative aspect-[3/4] w-full overflow-hidden bg-[#eee] backdrop-blur-[2px] sm:aspect-auto sm:h-[400px]"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
