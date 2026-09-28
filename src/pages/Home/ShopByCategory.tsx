@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
-import topsImg from "../../assets/home/imgProperty1Frame64.jpg";
-import bottomsImg from "../../assets/home/imgProperty1Frame63.png";
-import setsImg from "../../assets/home/imgProperty1Frame62.jpg";
+import topsImg from "../../assets/home/categories/tops.jpg";
+import bottomsImg from "../../assets/home/categories/bottoms.jpg";
+import setsImg from "../../assets/home/categories/sets.jpg";
 
 const CATEGORIES = [
   { label: "TOPS", image: topsImg, to: "/products?category=tops", height: "h-[420px] sm:h-[500px]" },
