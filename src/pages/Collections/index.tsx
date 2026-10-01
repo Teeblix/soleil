@@ -8,7 +8,7 @@ import { Footer } from "../../components/Footer";
 import { Button } from "../../components/ui/Button";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
 import { EASE } from "../../lib/motion";
-import chevron from "../../assets/common/imgChevronDown.svg";
+import { Breadcrumb } from "../../components/Breadcrumb";
 
 // Collections whose name also appears elsewhere on the site reuse that exact
 // image, so a shopper meets the same piece wherever the name turns up.
@@ -104,16 +104,7 @@ export function Collections() {
         <div className="flex w-full max-w-[1280px] flex-col gap-10 md:gap-16">
           <Reveal className="flex w-full flex-col gap-6 md:gap-8">
             <RevealItem>
-              <nav aria-label="Breadcrumb" className="flex items-center gap-3">
-                <Link to="/" className="group relative inline-block text-[16px] text-ink">
-                  Home
-                  <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-500 ease-in-out group-hover:scale-x-100" />
-                </Link>
-                <img src={chevron} alt="" className="h-[7px] w-[4px] -rotate-90" />
-                <span aria-current="page" className="text-[16px] font-light text-muted/60">
-                  Collections
-                </span>
-              </nav>
+              <Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Collections" }]} />
             </RevealItem>
 
             <div className="flex w-full flex-col items-center gap-4 text-center">
