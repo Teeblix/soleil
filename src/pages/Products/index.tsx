@@ -103,18 +103,23 @@ export function Products() {
           className="absolute inset-0"
           style={{ backgroundImage: "linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,0.6) 100%)" }}
         />
-        <div className="relative mx-auto flex w-full max-w-[1280px] flex-col gap-6 px-5 pb-10 text-white md:gap-8 md:px-20 md:pb-20">
-          <Breadcrumb
-            tone="light"
-            items={[
-              { label: "Home", to: "/" },
-              { label: "Collections", to: "/collections" },
-              { label: title },
-            ]}
-          />
-          <h1 className="font-display text-[34px] font-medium uppercase sm:text-[44px] lg:text-[54px]">
-            {title}
-          </h1>
+        {/* Padding sits on the outer wrapper, not on the max-width box, so the
+            breadcrumb and title line up with the header logo and the filter
+            rail rather than being inset twice. */}
+        <div className="relative flex w-full flex-col items-center px-5 pb-10 md:px-20 md:pb-20">
+          <div className="flex w-full max-w-[1280px] flex-col gap-6 text-white md:gap-8">
+            <Breadcrumb
+              tone="light"
+              items={[
+                { label: "Home", to: "/" },
+                { label: "Collections", to: "/collections" },
+                { label: title },
+              ]}
+            />
+            <h1 className="font-display text-[34px] font-medium uppercase sm:text-[44px] lg:text-[54px]">
+              {title}
+            </h1>
+          </div>
         </div>
       </section>
 
