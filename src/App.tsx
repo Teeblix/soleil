@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Home } from "./pages/Home";
 import { ComingSoon } from "./pages/ComingSoon";
+import { Collections } from "./pages/Collections";
 
 const STUB_PAGES: { path: string; title: string }[] = [
-  { path: "/collections", title: "Collections" },
   { path: "/products", title: "All Products" },
   { path: "/product/:slug", title: "Product" },
   { path: "/lookbook", title: "Lookbook" },
@@ -33,6 +33,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/collections" element={<Collections />} />
         {STUB_PAGES.map((page) => (
           <Route key={page.path} path={page.path} element={<ComingSoon title={page.title} />} />
         ))}
