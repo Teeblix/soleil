@@ -9,6 +9,7 @@ import { Button } from "../../components/ui/Button";
 import { Reveal, RevealItem, RevealWords } from "../../components/Reveal";
 import { EASE } from "../../lib/motion";
 import { Breadcrumb } from "../../components/Breadcrumb";
+import { countIn } from "../../lib/shopData";
 
 // Collections whose name also appears elsewhere on the site reuse that exact
 // image, so a shopper meets the same piece wherever the name turns up.
@@ -29,26 +30,26 @@ import allProductsImg from "../../assets/collections/allProducts.jpg";
 
 type Collection = {
   name: string;
-  items: number;
+  slug: string;
   image: string;
   to: string;
 };
 
 const COLLECTIONS: Collection[] = [
-  { name: "Best Sellers", items: 60, image: bestSellersImg, to: "/products?filter=best-sellers" },
-  { name: "Bandeau", items: 48, image: bandeauImg, to: "/products?category=bandeau" },
-  { name: "Bottoms", items: 34, image: bottomsImg, to: "/products?category=bottoms" },
-  { name: "Cover-Ups", items: 36, image: coverUpsImg, to: "/products?category=cover-ups" },
-  { name: "High-Waisted", items: 12, image: highWaistedImg, to: "/products?category=high-waisted" },
-  { name: "New Arrivals", items: 45, image: newArrivalsImg, to: "/products?filter=new" },
-  { name: "One-Piece", items: 15, image: onePieceImg, to: "/products?category=one-piece" },
-  { name: "Sale", items: 19, image: saleImg, to: "/products?filter=sale" },
-  { name: "Sets", items: 22, image: setsImg, to: "/products?category=sets" },
+  { name: "Best Sellers", slug: "best-sellers", image: bestSellersImg, to: "/collections/best-sellers" },
+  { name: "Bandeau", slug: "bandeau", image: bandeauImg, to: "/collections/bandeau" },
+  { name: "Bottoms", slug: "bottoms", image: bottomsImg, to: "/collections/bottoms" },
+  { name: "Cover-Ups", slug: "cover-ups", image: coverUpsImg, to: "/collections/cover-ups" },
+  { name: "High-Waisted", slug: "high-waisted", image: highWaistedImg, to: "/collections/high-waisted" },
+  { name: "New Arrivals", slug: "new-arrivals", image: newArrivalsImg, to: "/collections/new-arrivals" },
+  { name: "One-Piece", slug: "one-piece", image: onePieceImg, to: "/collections/one-piece" },
+  { name: "Sale", slug: "sale", image: saleImg, to: "/collections/sale" },
+  { name: "Sets", slug: "sets", image: setsImg, to: "/collections/sets" },
   // Revealed by LOAD MORE
-  { name: "Three-Piece", items: 16, image: threePieceImg, to: "/products?category=three-piece" },
-  { name: "Tops", items: 12, image: topsImg, to: "/products?category=tops" },
-  { name: "Triangle", items: 30, image: triangleImg, to: "/products?category=triangle" },
-  { name: "All Products", items: 349, image: allProductsImg, to: "/products" },
+  { name: "Three-Piece", slug: "three-piece", image: threePieceImg, to: "/collections/three-piece" },
+  { name: "Tops", slug: "tops", image: topsImg, to: "/collections/tops" },
+  { name: "Triangle", slug: "triangle", image: triangleImg, to: "/collections/triangle" },
+  { name: "All Products", slug: "all", image: allProductsImg, to: "/products" },
 ];
 
 const INITIAL_COUNT = 9;
@@ -85,7 +86,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
           {collection.name}
           <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-500 ease-in-out group-hover:scale-x-100" />
         </span>
-        <span className="text-[18px] text-muted">{collection.items} items</span>
+        <span className="text-[18px] text-muted">{countIn(collection.slug)} items</span>
       </div>
     </Link>
   );

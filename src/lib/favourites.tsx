@@ -55,15 +55,15 @@ export function FavouritesProvider({ children }: { children: ReactNode }) {
     }, 2600);
   }, []);
 
+  // The toast is raised here rather than inside the state updater: React runs
+  // updater functions twice under StrictMode, which fired the toast twice.
   const toggleFavourite = useCallback(
     (slug: string, name: string) => {
-      setFavourites((current) => {
-        const has = current.includes(slug);
-        pushToast(has ? `${name} removed from favourites` : `${name} added to favourites`);
-        return has ? current.filter((s) => s !== slug) : [...current, slug];
-      });
+      const has = favourites.includes(slug);
+      setFavourites(has ? favourites.filter((s) => s !== slug) : [...favourites, slug]);
+      pushToast(has ? `${name} removed from favourites` : `${name} added to favourites`);
     },
-    [pushToast],
+    [favourites, pushToast],
   );
 
   const value = useMemo<FavouritesValue>(

@@ -3,11 +3,13 @@ import { useLayoutEffect, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Home } from "./pages/Home";
 import { Collections } from "./pages/Collections";
+import { Products } from "./pages/Products";
 import { ComingSoon } from "./pages/ComingSoon";
 import { EASE } from "./lib/motion";
+import { FavouritesProvider } from "./lib/favourites";
+import { Toasts } from "./components/Toasts";
 
 const STUB_PAGES: { path: string; title: string }[] = [
-  { path: "/products", title: "All Products" },
   { path: "/product/:slug", title: "Product" },
   { path: "/lookbook", title: "Lookbook" },
   { path: "/about", title: "About" },
@@ -52,6 +54,8 @@ function AnimatedRoutes() {
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/collections" element={<Collections />} />
+        <Route path="/collections/:slug" element={<Products />} />
+        <Route path="/products" element={<Products />} />
             {STUB_PAGES.map((page) => (
               <Route key={page.path} path={page.path} element={<ComingSoon title={page.title} />} />
             ))}
@@ -65,9 +69,12 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <FavouritesProvider>
+      <BrowserRouter>
+        <AnimatedRoutes />
+        <Toasts />
+      </BrowserRouter>
+    </FavouritesProvider>
   );
 }
 
