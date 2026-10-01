@@ -1,16 +1,87 @@
+"""Compose a raw studio generation into a card-ready product image.
+
+This mirrors how the Fresh For Summer cards on the home page were built, which
+is the look we want: the subject is measured, scaled to a fixed share of the
+card height and sat on the card's bottom edge, so every product reads at the
+same size with the same headroom no matter how the generator framed the shot.
+
+It depends on the source being framed head-to-mid-thigh: the head clear of the
+top with space either side, the thighs running off the bottom. A head or a
+shoulder touching an edge means the frame cut through the model, the measured
+box is not what we think it is, and scaling from it would make that one card
+the odd one out - so those are rejected for reshooting rather than silently
+producing a mismatched card.
+"""
 from PIL import Image
 import numpy as np, sys, os
-CARD=(238,238,238)
-def key(src, dst, W=604, H=800):
-    im=Image.open(src).convert("RGB")
-    s=max(W/im.width,H/im.height)
-    r=im.resize((round(im.width*s),round(im.height*s)),Image.LANCZOS)
-    r=r.crop(((r.width-W)//2,0,(r.width-W)//2+W,H))        # top-anchored, keeps heads
-    a=np.asarray(r).astype(np.float32)
-    mn=a.min(axis=2)
-    t=np.clip((mn-228.0)/24.0,0,1)[...,None]               # feathered white->card
-    out=a*(1-t)+np.array(CARD,dtype=np.float32)*t
-    Image.fromarray(out.astype(np.uint8)).save(dst,"JPEG",quality=82,optimize=True,progressive=True)
-    return os.path.getsize(dst)//1024
-if __name__=="__main__":
-    print(key(sys.argv[1], sys.argv[2]), "KB")
+
+CARD = (238, 238, 238)      # #eee, the product card background
+W, H = 604, 800             # 2x the 302x400 card, ratio 0.755
+FIGURE_H = 0.925            # subject height as a share of the card
+NEAR, FAR = 10.0, 30.0      # backdrop feather band, in colour distance
+SUBJECT = 24.0              # colour distance that counts as subject
+MIN_RUN = 0.010             # share of a row that must be subject to count
+EDGE = 3                    # px of margin required on every side
+
+
+class BadFraming(Exception):
+    """The source frame cuts through the subject, so it cannot be measured."""
+
+
+def backdrop(a: np.ndarray) -> np.ndarray:
+    """Backdrop colour sampled from the top corners, where the model is not.
+    Not every generation comes back pure white; some are warm off-white."""
+    h, w, _ = a.shape
+    k = max(8, min(h, w) // 40)
+    corners = np.concatenate([a[:k, :k].reshape(-1, 3), a[:k, -k:].reshape(-1, 3)])
+    return np.median(corners, axis=0)
+
+
+def subject_box(d: np.ndarray):
+    """Bounding box of the model. A row counts only if a meaningful run of it
+    is subject, so specks and faint gradients cannot define the box."""
+    m = d > SUBJECT
+    h, w = m.shape
+    rows = np.where(m.sum(axis=1) > max(10, MIN_RUN * w))[0]
+    cols = np.where(m.sum(axis=0) > max(10, MIN_RUN * h))[0]
+    if not len(rows) or not len(cols):
+        return None
+    return cols[0], rows[0], cols[-1], rows[-1]
+
+
+def compose(src: str, dst: str, strict: bool = True) -> int:
+    im = Image.open(src).convert("RGB")
+    a = np.asarray(im)
+    bg = backdrop(a)
+    box = subject_box(np.abs(a.astype(np.float32) - bg).max(axis=2))
+    if box is None:
+        raise BadFraming(src)
+
+    left, top, right, bottom = box
+    # The thighs sitting on the bottom edge is the intended crop, so only the
+    # head and the sides must be clear of the frame.
+    if strict and (top <= EDGE or left <= EDGE or right >= a.shape[1] - EDGE):
+        raise BadFraming(src)
+
+    scale = (FIGURE_H * H) / (bottom - top + 1)
+    im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
+
+    canvas = Image.new("RGB", (W, H), CARD)
+    canvas.paste(im, (round(W / 2 - (left + right) / 2 * scale),   # centred on the subject
+                      round(H - (bottom + 1) * scale)))            # sat on the bottom edge
+
+    a = np.asarray(canvas).astype(np.float32)
+    d = np.abs(a - bg).max(axis=2)
+    t = np.clip((FAR - d) / (FAR - NEAR), 0, 1)[..., None]         # 1 on the backdrop
+    out = a * (1 - t) + np.array(CARD, dtype=np.float32) * t
+    Image.fromarray(out.astype(np.uint8)).save(
+        dst, "JPEG", quality=82, optimize=True, progressive=True)
+    return os.path.getsize(dst) // 1024
+
+
+if __name__ == "__main__":
+    try:
+        print(compose(sys.argv[1], sys.argv[2]), "KB")
+    except BadFraming:
+        print(f"REJECTED (frame cuts the subject): {sys.argv[1]}")
+        sys.exit(3)
