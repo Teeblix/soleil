@@ -19,7 +19,7 @@ export function ShopByCategory() {
         <div className="flex items-center justify-between">
           <RevealWords text="SHOP BY CATEGORY" className="font-display text-[28px] font-medium sm:text-[40px]" />
           <RevealItem className="hidden sm:block">
-            <Button to="/products">EXPLORE ALL</Button>
+            <Button to="/collections">EXPLORE ALL</Button>
           </RevealItem>
         </div>
         <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -49,7 +49,7 @@ export function ShopByCategory() {
           ))}
         </div>
         <RevealItem className="sm:hidden">
-          <Button to="/products">EXPLORE ALL</Button>
+          <Button to="/collections">EXPLORE ALL</Button>
         </RevealItem>
       </Reveal>
     </section>
