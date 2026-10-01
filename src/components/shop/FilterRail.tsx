@@ -18,21 +18,20 @@ function PlusMinus({ open }: { open: boolean }) {
 }
 
 /**
- * Sticks 120px below the top of the viewport while the grid scrolls, which
- * clears the header rather than sliding underneath it.
+ * Sticks 20px below the top of the viewport while the grid scrolls.
  */
 export function FilterRail({ className = "" }: { className?: string }) {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <aside className={`w-full lg:sticky lg:top-[120px] lg:w-[302px] lg:shrink-0 ${className}`}>
+    <aside className={`w-full lg:sticky lg:top-5 lg:w-[302px] lg:shrink-0 ${className}`}>
       <div className="flex w-full flex-col">
         {ROWS.map((row, i) => (
           <div key={row} className={i > 0 ? "border-t border-line" : ""}>
             <button
               onClick={() => setOpen((current) => (current === row ? null : row))}
               aria-expanded={open === row}
-              className="flex w-full items-center justify-between py-6 text-left text-[18px] text-ink"
+              className={`flex w-full items-center justify-between pb-6 text-left text-[18px] text-ink ${i > 0 ? "pt-6" : ""}`}
             >
               {row}
               <PlusMinus open={open === row} />

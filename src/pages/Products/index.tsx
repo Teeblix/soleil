@@ -119,16 +119,24 @@ export function Products() {
       </section>
 
       <div className="flex w-full flex-col items-center px-5 pb-16 pt-10 md:px-20 md:pb-20">
-        <div className="flex w-full max-w-[1280px] flex-col gap-10">
-          <div className="flex items-center justify-between">
-            <p className="text-[18px] text-ink">{total} products</p>
-            <button
-              onClick={() => setFiltersOpen((v) => !v)}
-              aria-expanded={filtersOpen}
-              className="hidden h-11 w-[153px] items-center justify-center border border-ink text-[16px] tracking-[0.8px] text-ink transition-colors hover:bg-ink hover:text-white lg:flex"
-            >
-              {filtersOpen ? "HIDE" : "SHOW"} FILTERS
-            </button>
+        <div className="flex w-full max-w-[1280px] flex-col gap-6">
+          {/* The count row is inset to start at the grid column, as in the design,
+              so the filter rail below it lines up with the first product card. */}
+          <div className="flex w-full lg:gap-6">
+            {filtersOpen && <div aria-hidden className="hidden w-[302px] shrink-0 lg:block" />}
+            <div className="flex w-full min-w-0 items-center justify-between">
+              <p className="text-[18px] text-ink">{total} products</p>
+              <button
+                onClick={() => setFiltersOpen((v) => !v)}
+                aria-expanded={filtersOpen}
+                className="hidden h-11 items-center justify-center gap-2 border border-ink px-5 text-[16px] tracking-[0.8px] text-ink transition-colors hover:bg-ink hover:text-white lg:flex"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M1.5 3h13l-5 5.5V13l-3 1.5V8.5L1.5 3z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+                </svg>
+                {filtersOpen ? "HIDE FILTER" : "SHOW FILTER"}
+              </button>
+            </div>
           </div>
 
           <div className="flex w-full flex-col gap-10 lg:flex-row lg:items-start lg:gap-6">
