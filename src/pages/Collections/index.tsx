@@ -81,11 +81,11 @@ function CollectionCard({ collection }: { collection: Collection }) {
         <div className="absolute inset-0 bg-black/10" />
       </div>
       <div className="flex flex-col gap-1.5">
-        <span className="relative inline-block w-max text-[20px] text-ink sm:text-[24px]">
+        <span className="relative inline-block w-max text-[24px] text-ink">
           {collection.name}
           <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-500 ease-in-out group-hover:scale-x-100" />
         </span>
-        <span className="text-[16px] text-muted sm:text-[18px]">{collection.items} items</span>
+        <span className="text-[18px] text-muted">{collection.items} items</span>
       </div>
     </Link>
   );
