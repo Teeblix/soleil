@@ -71,6 +71,7 @@ function CardReveal({ index, children }: { index: number; children: ReactNode })
 }
 
 function CollectionCard({ collection }: { collection: Collection }) {
+  const count = countIn(collection.slug);
   return (
     <Link to={collection.to} className="group flex w-full flex-col gap-3">
       <div className="relative aspect-[410.67/500] w-full overflow-hidden">
@@ -86,7 +87,9 @@ function CollectionCard({ collection }: { collection: Collection }) {
           {collection.name}
           <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-500 ease-in-out group-hover:scale-x-100" />
         </span>
-        <span className="text-[18px] text-muted">{countIn(collection.slug)} items</span>
+        <span className="text-[18px] text-muted">
+          {count} {count === 1 ? "item" : "items"}
+        </span>
       </div>
     </Link>
   );

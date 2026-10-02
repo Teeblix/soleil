@@ -130,7 +130,9 @@ export function Products() {
           <div className="flex w-full lg:gap-6">
             {filtersOpen && <div aria-hidden className="hidden w-[302px] shrink-0 lg:block" />}
             <div className="flex w-full min-w-0 items-center justify-between">
-              <p className="text-[18px] text-ink">{total} products</p>
+              <p className="text-[18px] text-ink">
+                {total} {total === 1 ? "product" : "products"}
+              </p>
               <button
                 onClick={() => setFiltersOpen((v) => !v)}
                 aria-expanded={filtersOpen}

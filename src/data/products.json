@@ -1,3002 +1,1102 @@
 [
- {
-  "slug": "milena-mesh-cover-up",
-  "name": "Milena Mesh Cover-Up",
-  "price": 85.99,
-  "rating": 4.5,
-  "reviews": 52,
-  "collection": "cover-ups",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sheer black mesh cover-up kaftan open over a black bikini",
-  "order": 0
- },
- {
-  "slug": "mira-swimsuit",
-  "name": "Mira Swimsuit",
-  "price": 34.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "one-piece",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sky-blue one-piece swimsuit with a square neckline and thin shoulder straps",
-  "order": 1
- },
- {
-  "slug": "noor-sheer-kaftan",
-  "name": "Noor Sheer Kaftan",
-  "price": 74.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "cover-ups",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a long sheer ivory mesh cover-up dress worn over an ivory bikini",
-  "order": 2
- },
- {
-  "slug": "calla-crochet-set",
-  "name": "Calla Crochet Set",
-  "price": 23.99,
-  "rating": 4.0,
-  "reviews": 96,
-  "collection": "sets",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige open crochet knit bikini set with scalloped edges",
-  "order": 3
- },
- {
-  "slug": "nova-cut-out-swimsuit",
-  "name": "Nova Cut-Out Swimsuit",
-  "price": 30.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "one-piece",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a deep azure one-piece swimsuit with sculpted cut-outs at the waist",
-  "order": 4
- },
- {
-  "slug": "orla-jersey-set",
-  "name": "Orla Jersey Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "sets",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream jersey bikini set, soft triangle top with matching mid-rise bottoms",
-  "order": 5
- },
- {
-  "slug": "estella-halter-one-piece",
-  "name": "Estella Halter One-Piece",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "one-piece",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a caramel halter-neck one-piece swimsuit",
-  "order": 6
- },
- {
-  "slug": "riviera-crochet-set",
-  "name": "Riviera Crochet Set",
-  "price": 36.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "sets",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow open crochet knit bikini set with scalloped edges",
-  "order": 7
- },
- {
-  "slug": "fiorella-high-rise-bikini",
-  "name": "Fiorella High-Rise Bikini",
-  "price": 111.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "high-waisted",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel high-rise bikini set with a halter top",
-  "order": 8
- },
- {
-  "slug": "dune-classic-bikini",
-  "name": "Dune Classic Bikini",
-  "price": 51.99,
-  "rating": 4.0,
-  "reviews": 120,
-  "collection": "best-sellers",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a lilac classic bikini set with clean minimal lines",
-  "order": 9
- },
- {
-  "slug": "mirabel-stripe-set",
-  "name": "Mirabel Stripe Set",
-  "price": 60.99,
-  "rating": 4.0,
-  "reviews": 96,
-  "collection": "sets",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white and cream striped bikini set with a bandeau top",
-  "order": 10
- },
- {
-  "slug": "giselle-three-piece-set",
-  "name": "Giselle Three-Piece Set",
-  "price": 40.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "three-piece",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a coral three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
-  "order": 11
- },
- {
-  "slug": "cove-swimsuit",
-  "name": "Cove Swimsuit",
-  "price": 30.99,
-  "rating": 4.5,
-  "reviews": 44,
-  "collection": "one-piece",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta one-piece swimsuit with a square neckline and thin shoulder straps",
-  "order": 12
- },
- {
-  "slug": "jolie-cheeky-set",
-  "name": "Jolie Cheeky Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "bottoms",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel cheeky-cut swim bottom with a simple matching top",
-  "order": 13
- },
- {
-  "slug": "fiora-mid-rise-set",
-  "name": "Fiora Mid-Rise Set",
-  "price": 27.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "bottoms",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory mid-rise swim bottom with a matching scoop top",
-  "order": 14
- },
- {
-  "slug": "baia-knot-bikini",
-  "name": "Baia Knot Bikini",
-  "price": 23.99,
-  "rating": 5.0,
-  "reviews": 52,
-  "collection": "best-sellers",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white bikini set with a knotted front top",
-  "order": 15
- },
- {
-  "slug": "cassis-stripe-set",
-  "name": "Cassis Stripe Set",
-  "price": 48.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "sets",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust and cream striped bikini set with a bandeau top",
-  "order": 16
- },
- {
-  "slug": "vita-swimsuit",
-  "name": "Vita Swimsuit",
-  "price": 46.99,
-  "rating": 5.0,
-  "reviews": 60,
-  "collection": "one-piece",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black one-piece swimsuit with a square neckline and thin shoulder straps",
-  "order": 17
- },
- {
-  "slug": "solene-triangle-set",
-  "name": "Solene Triangle Set",
-  "price": 111.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "triangle",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cornflower-blue triangle bikini with thin halter ties and side-tie bottoms",
-  "order": 18
- },
- {
-  "slug": "gaia-high-waisted-bikini",
-  "name": "Gaia High-Waisted Bikini",
-  "price": 54.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "high-waisted",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown high-waisted bikini with a bandeau top and high-rise bottoms",
-  "order": 19
- },
- {
-  "slug": "indra-triangle-bikini",
-  "name": "Indra Triangle Bikini",
-  "price": 151.99,
-  "rating": 4.5,
-  "reviews": 78,
-  "collection": "triangle",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust classic triangle bikini with thin halter ties",
-  "order": 20
- },
- {
-  "slug": "soleil-jersey-set",
-  "name": "Soleil Jersey Set",
-  "price": 25.99,
-  "rating": 4.0,
-  "reviews": 120,
-  "collection": "sets",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a liquid-silver jersey bikini set, soft triangle top with matching mid-rise bottoms",
-  "order": 21
- },
- {
-  "slug": "rosalind-triangle-bikini",
-  "name": "Rosalind Triangle Bikini",
-  "price": 51.99,
-  "rating": 4.5,
-  "reviews": 44,
-  "collection": "triangle",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal classic triangle bikini with thin halter ties",
-  "order": 22
- },
- {
-  "slug": "lune-classic-bikini",
-  "name": "Lune Classic Bikini",
-  "price": 151.99,
-  "rating": 4.5,
-  "reviews": 52,
-  "collection": "best-sellers",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a cornflower-blue classic bikini set with clean minimal lines",
-  "order": 23
- },
- {
-  "slug": "ponza-twist-bandeau",
-  "name": "Ponza Twist Bandeau",
-  "price": 51.99,
-  "rating": 4.5,
-  "reviews": 12,
-  "collection": "bandeau",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown twisted bandeau bikini set",
-  "order": 24
- },
- {
-  "slug": "saskia-mesh-cover-up",
-  "name": "Saskia Mesh Cover-Up",
-  "price": 32.99,
-  "rating": 4.0,
-  "reviews": 145,
-  "collection": "cover-ups",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sheer sage-green mesh cover-up kaftan open over a matching bikini",
-  "order": 25
- },
- {
-  "slug": "neve-wrap-set",
-  "name": "Neve Wrap Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "new-arrivals",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a dusty-pink wrap-front bikini set with ties around the waist",
-  "order": 26
- },
- {
-  "slug": "nerida-twist-bandeau",
-  "name": "Nerida Twist Bandeau",
-  "price": 54.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "bandeau",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal twisted bandeau bikini set",
-  "order": 27
- },
- {
-  "slug": "ulla-crochet-cover-up",
-  "name": "Ulla Crochet Cover-Up",
-  "price": 34.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "cover-ups",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal open-crochet beach cover-up dress worn over a matching bikini",
-  "order": 28
- },
- {
-  "slug": "sirena-seersucker-set",
-  "name": "Sirena Seersucker Set",
-  "price": 21.99,
-  "rating": 4.5,
-  "reviews": 24,
-  "collection": "new-arrivals",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust seersucker check bikini set with a ruffled balconette top",
-  "order": 29
- },
- {
-  "slug": "maren-bikini",
-  "name": "Maren Bikini",
-  "price": 27.99,
-  "rating": 4.5,
-  "reviews": 96,
-  "collection": "sale",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green classic bikini set with thin straps",
-  "order": 30
- },
- {
-  "slug": "cressida-three-piece-set",
-  "name": "Cressida Three-Piece Set",
-  "price": 57.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "three-piece",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
-  "order": 31
- },
- {
-  "slug": "cascade-sculpt-swimsuit",
-  "name": "Cascade Sculpt Swimsuit",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "best-sellers",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a navy sculpted one-piece swimsuit with a high leg",
-  "order": 32
- },
- {
-  "slug": "alassio-twist-bandeau",
-  "name": "Alassio Twist Bandeau",
-  "price": 93.99,
-  "rating": 4.5,
-  "reviews": 31,
-  "collection": "bandeau",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a dusty-pink twisted bandeau bikini set",
-  "order": 33
- },
- {
-  "slug": "flora-knot-bikini",
-  "name": "Flora Knot Bikini",
-  "price": 32.99,
-  "rating": 4.5,
-  "reviews": 96,
-  "collection": "best-sellers",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a coral bikini set with a knotted front top",
-  "order": 34
- },
- {
-  "slug": "marin-plunge-swimsuit",
-  "name": "Marin Plunge Swimsuit",
-  "price": 48.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "one-piece",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a coral plunge-front one-piece swimsuit with thin straps",
-  "order": 35
- },
- {
-  "slug": "wilda-scoop-set",
-  "name": "Wilda Scoop Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 37,
-  "collection": "tops",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a liquid-silver scoop-neck bikini top with matching simple bottoms",
-  "order": 36
- },
- {
-  "slug": "oria-mesh-set",
-  "name": "Oria Mesh Set",
-  "price": 23.99,
-  "rating": 4.5,
-  "reviews": 31,
-  "collection": "new-arrivals",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red mesh-panel bikini set with a halter top",
-  "order": 37
- },
- {
-  "slug": "ischia-jersey-set",
-  "name": "Ischia Jersey Set",
-  "price": 78.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "sets",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal jersey bikini set, soft triangle top with matching mid-rise bottoms",
-  "order": 38
- },
- {
-  "slug": "kaia-mid-rise-set",
-  "name": "Kaia Mid-Rise Set",
-  "price": 30.99,
-  "rating": 4.5,
-  "reviews": 37,
-  "collection": "bottoms",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown mid-rise swim bottom with a matching scoop top",
-  "order": 39
- },
- {
-  "slug": "vedette-balconette-set",
-  "name": "Vedette Balconette Set",
-  "price": 21.99,
-  "rating": 4.0,
-  "reviews": 31,
-  "collection": "tops",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a shimmering gold balconette bikini top with a small ruffle trim and matching bottoms",
-  "order": 40
- },
- {
-  "slug": "brio-wrap-one-piece",
-  "name": "Brio Wrap One-Piece",
-  "price": 54.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "one-piece",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red wrap-front one-piece swimsuit with a draped bodice",
-  "order": 41
- },
- {
-  "slug": "orinda-triangle-bikini",
-  "name": "Orinda Triangle Bikini",
-  "price": 57.99,
-  "rating": 5.0,
-  "reviews": 52,
-  "collection": "triangle",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green classic triangle bikini with thin halter ties",
-  "order": 42
- },
- {
-  "slug": "lira-cut-out-swimsuit",
-  "name": "Lira Cut-Out Swimsuit",
-  "price": 28.99,
-  "rating": 4.0,
-  "reviews": 44,
-  "collection": "one-piece",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust one-piece swimsuit with sculpted cut-outs at the waist",
-  "order": 43
- },
- {
-  "slug": "riva-cut-out-swimsuit",
-  "name": "Riva Cut-Out Swimsuit",
-  "price": 30.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "one-piece",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory one-piece swimsuit with sculpted cut-outs at the waist",
-  "order": 44
- },
- {
-  "slug": "noir-signature-swimsuit",
-  "name": "Noir Signature Swimsuit",
-  "price": 48.99,
-  "rating": 5.0,
-  "reviews": 60,
-  "collection": "best-sellers",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black one-piece swimsuit with a scooped back and high leg",
-  "order": 45
- },
- {
-  "slug": "sole-ribbed-one-piece",
-  "name": "Sole Ribbed One-Piece",
-  "price": 34.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "one-piece",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow ribbed one-piece swimsuit with a scooped back",
-  "order": 46
- },
- {
-  "slug": "giada-high-rise-set",
-  "name": "Giada High-Rise Set",
-  "price": 93.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "bottoms",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream high-rise swim bottom with a simple matching bandeau top",
-  "order": 47
- },
- {
-  "slug": "selene-tie-side-set",
-  "name": "Selene Tie-Side Set",
-  "price": 111.99,
-  "rating": 4.0,
-  "reviews": 37,
-  "collection": "bottoms",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a navy tie-side bikini with small bows at both hips",
-  "order": 48
- },
- {
-  "slug": "cielo-classic-bikini",
-  "name": "Cielo Classic Bikini",
-  "price": 151.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "best-sellers",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory classic bikini set with clean minimal lines",
-  "order": 49
- },
- {
-  "slug": "esme-cheeky-set",
-  "name": "Esmé Cheeky Set",
-  "price": 28.99,
-  "rating": 4.0,
-  "reviews": 120,
-  "collection": "bottoms",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a black cheeky-cut swim bottom with a simple matching top",
-  "order": 50
- },
- {
-  "slug": "pavi-triangle-set",
-  "name": "Pavi Triangle Set",
-  "price": 93.99,
-  "rating": 5.0,
-  "reviews": 37,
-  "collection": "triangle",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green triangle bikini with thin halter ties and side-tie bottoms",
-  "order": 51
- },
- {
-  "slug": "xanthe-high-waisted-bikini",
-  "name": "Xanthe High-Waisted Bikini",
-  "price": 23.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "high-waisted",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white high-waisted bikini with a bandeau top and high-rise bottoms",
-  "order": 52
- },
- {
-  "slug": "delia-trio-set",
-  "name": "Delia Trio Set",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "three-piece",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown three-piece swim set: bandeau top, bottoms and a matching tie skirt",
-  "order": 53
- },
- {
-  "slug": "azure-sculpt-swimsuit",
-  "name": "Azure Sculpt Swimsuit",
-  "price": 54.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "best-sellers",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream sculpted one-piece swimsuit with a high leg",
-  "order": 54
- },
- {
-  "slug": "nerea-eyelet-set",
-  "name": "Nerea Eyelet Set",
-  "price": 21.99,
-  "rating": 4.5,
-  "reviews": 96,
-  "collection": "new-arrivals",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta broderie eyelet bikini set with scalloped trim",
-  "order": 55
- },
- {
-  "slug": "aurora-mid-rise-set",
-  "name": "Aurora Mid-Rise Set",
-  "price": 42.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "bottoms",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a shimmering gold mid-rise swim bottom with a matching scoop top",
-  "order": 56
- },
- {
-  "slug": "capri-seersucker-set",
-  "name": "Capri Seersucker Set",
-  "price": 51.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "new-arrivals",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream seersucker check bikini set with a ruffled balconette top",
-  "order": 57
- },
- {
-  "slug": "allegra-ribbed-set",
-  "name": "Allegra Ribbed Set",
-  "price": 74.99,
-  "rating": 5.0,
-  "reviews": 52,
-  "collection": "tops",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a cream ribbed bikini top with thin straps and matching bottoms",
-  "order": 58
- },
- {
-  "slug": "vera-wrap-set",
-  "name": "Vera Wrap Set",
-  "price": 44.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "new-arrivals",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal wrap-front bikini set with ties around the waist",
-  "order": 59
- },
- {
-  "slug": "delphine-tie-side-set",
-  "name": "Delphine Tie-Side Set",
-  "price": 32.99,
-  "rating": 4.0,
-  "reviews": 37,
-  "collection": "bottoms",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow tie-side bikini with small bows at both hips",
-  "order": 60
- },
- {
-  "slug": "giglio-ribbed-bandeau",
-  "name": "Giglio Ribbed Bandeau",
-  "price": 27.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "bandeau",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel ribbed strapless bandeau bikini set",
-  "order": 61
- },
- {
-  "slug": "tropic-mesh-swimsuit",
-  "name": "Tropic Mesh Swimsuit",
-  "price": 48.99,
-  "rating": 4.5,
-  "reviews": 60,
-  "collection": "best-sellers",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red one-piece swimsuit with sheer mesh panels at the waist",
-  "order": 62
- },
- {
-  "slug": "adria-seersucker-set",
-  "name": "Adria Seersucker Set",
-  "price": 60.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "new-arrivals",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "an olive seersucker check bikini set with a ruffled balconette top",
-  "order": 63
- },
- {
-  "slug": "yvaine-balconette-set",
-  "name": "Yvaine Balconette Set",
-  "price": 51.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "tops",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black balconette bikini top with a small ruffle trim and matching bottoms",
-  "order": 64
- },
- {
-  "slug": "luna-shine-set",
-  "name": "Luna Shine Set",
-  "price": 151.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "new-arrivals",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a coral metallic bikini set with a triangle top",
-  "order": 65
- },
- {
-  "slug": "oceane-tropic-set",
-  "name": "Océane Tropic Set",
-  "price": 44.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "sets",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a shimmering gold tropical leaf print bikini set",
-  "order": 66
- },
- {
-  "slug": "aurelia-signature-swimsuit",
-  "name": "Aurelia Signature Swimsuit",
-  "price": 25.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "best-sellers",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal one-piece swimsuit with a scooped back and high leg",
-  "order": 67
- },
- {
-  "slug": "zefiro-ruched-bandeau",
-  "name": "Zefiro Ruched Bandeau",
-  "price": 60.99,
-  "rating": 4.5,
-  "reviews": 31,
-  "collection": "bandeau",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a lilac ruched bandeau bikini with gathered detailing",
-  "order": 68
- },
- {
-  "slug": "mistral-mesh-swimsuit",
-  "name": "Mistral Mesh Swimsuit",
-  "price": 44.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "best-sellers",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a shimmering gold one-piece swimsuit with sheer mesh panels at the waist",
-  "order": 69
- },
- {
-  "slug": "hermia-trio-set",
-  "name": "Hermia Trio Set",
-  "price": 32.99,
-  "rating": 4.5,
-  "reviews": 31,
-  "collection": "three-piece",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red three-piece swim set: bandeau top, bottoms and a matching tie skirt",
-  "order": 70
- },
- {
-  "slug": "juno-trio-set",
-  "name": "Juno Trio Set",
-  "price": 36.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "three-piece",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a lilac three-piece swim set: bandeau top, bottoms and a matching tie skirt",
-  "order": 71
- },
- {
-  "slug": "positano-tropic-set",
-  "name": "Positano Tropic Set",
-  "price": 42.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "sets",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green tropical leaf print bikini set",
-  "order": 72
- },
- {
-  "slug": "hyeres-bandeau-set",
-  "name": "Hyères Bandeau Set",
-  "price": 51.99,
-  "rating": 4.0,
-  "reviews": 31,
-  "collection": "bandeau",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige strapless bandeau bikini with a twisted front and high-leg bottoms",
-  "order": 73
- },
- {
-  "slug": "lavena-swimsuit",
-  "name": "Lavena Swimsuit",
-  "price": 44.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "sale",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green one-piece swimsuit with a scooped neckline",
-  "order": 74
- },
- {
-  "slug": "caldera-high-rise-bikini",
-  "name": "Caldera High-Rise Bikini",
-  "price": 78.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "high-waisted",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory high-rise bikini set with a halter top",
-  "order": 75
- },
- {
-  "slug": "sable-knot-bikini",
-  "name": "Sable Knot Bikini",
-  "price": 111.99,
-  "rating": 4.0,
-  "reviews": 145,
-  "collection": "best-sellers",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green bikini set with a knotted front top",
-  "order": 76
- },
- {
-  "slug": "amalfi-halter-one-piece",
-  "name": "Amalfi Halter One-Piece",
-  "price": 27.99,
-  "rating": 4.0,
-  "reviews": 78,
-  "collection": "one-piece",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a liquid-silver halter-neck one-piece swimsuit",
-  "order": 77
- },
- {
-  "slug": "quilla-sheer-kaftan",
-  "name": "Quilla Sheer Kaftan",
-  "price": 60.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "cover-ups",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a long lilac sheer kaftan worn open over a matching bikini",
-  "order": 78
- },
- {
-  "slug": "thalia-ribbed-bandeau",
-  "name": "Thalia Ribbed Bandeau",
-  "price": 36.99,
-  "rating": 4.5,
-  "reviews": 52,
-  "collection": "bandeau",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green ribbed strapless bandeau bikini set",
-  "order": 79
- },
- {
-  "slug": "wren-sheer-kaftan",
-  "name": "Wren Sheer Kaftan",
-  "price": 151.99,
-  "rating": 4.0,
-  "reviews": 44,
-  "collection": "cover-ups",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a long navy sheer kaftan worn open over a matching bikini",
-  "order": 80
- },
- {
-  "slug": "faro-shine-set",
-  "name": "Faro Shine Set",
-  "price": 42.99,
-  "rating": 4.5,
-  "reviews": 96,
-  "collection": "new-arrivals",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green metallic bikini set with a triangle top",
-  "order": 81
- },
- {
-  "slug": "elowen-three-piece-set",
-  "name": "Elowen Three-Piece Set",
-  "price": 63.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "three-piece",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
-  "order": 82
- },
- {
-  "slug": "nixie-triangle-set",
-  "name": "Nixie Triangle Set",
-  "price": 25.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "triangle",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "an olive triangle bikini with thin halter ties and side-tie bottoms",
-  "order": 83
- },
- {
-  "slug": "maree-sculpt-swimsuit",
-  "name": "Marée Sculpt Swimsuit",
-  "price": 66.99,
-  "rating": 4.5,
-  "reviews": 52,
-  "collection": "best-sellers",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an olive sculpted one-piece swimsuit with a high leg",
-  "order": 84
- },
- {
-  "slug": "vanna-mesh-cover-up",
-  "name": "Vanna Mesh Cover-Up",
-  "price": 57.99,
-  "rating": 4.5,
-  "reviews": 37,
-  "collection": "cover-ups",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sheer cornflower-blue mesh cover-up kaftan open over a matching bikini",
-  "order": 85
- },
- {
-  "slug": "vela-mesh-swimsuit",
-  "name": "Vela Mesh Swimsuit",
-  "price": 85.99,
-  "rating": 4.5,
-  "reviews": 78,
-  "collection": "best-sellers",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green one-piece swimsuit with sheer mesh panels at the waist",
-  "order": 86
- },
- {
-  "slug": "paloma-swimsuit",
-  "name": "Paloma Swimsuit",
-  "price": 111.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "sale",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a navy one-piece swimsuit with a scooped neckline",
-  "order": 87
- },
- {
-  "slug": "onda-shine-set",
-  "name": "Onda Shine Set",
-  "price": 48.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "new-arrivals",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige metallic bikini set with a triangle top",
-  "order": 88
- },
- {
-  "slug": "antibes-linen-set",
-  "name": "Antibes Linen Set",
-  "price": 78.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "sets",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black linen-look bikini set with a square-neck top",
-  "order": 89
- },
- {
-  "slug": "doria-high-waisted-bikini",
-  "name": "Doria High-Waisted Bikini",
-  "price": 51.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "high-waisted",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a cream high-waisted bikini with a bandeau top and high-rise bottoms",
-  "order": 90
- },
- {
-  "slug": "ravello-wrap-one-piece",
-  "name": "Ravello Wrap One-Piece",
-  "price": 63.99,
-  "rating": 4.0,
-  "reviews": 52,
-  "collection": "one-piece",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a shimmering gold wrap-front one-piece swimsuit with a draped bodice",
-  "order": 91
- },
- {
-  "slug": "fenella-trio-set",
-  "name": "Fenella Trio Set",
-  "price": 78.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "three-piece",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust three-piece swim set: bandeau top, bottoms and a matching tie skirt",
-  "order": 92
- },
- {
-  "slug": "tamsin-sheer-kaftan",
-  "name": "Tamsin Sheer Kaftan",
-  "price": 93.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "cover-ups",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a long palm-green sheer kaftan worn open over a matching bikini",
-  "order": 93
- },
- {
-  "slug": "lido-eyelet-set",
-  "name": "Lido Eyelet Set",
-  "price": 27.99,
-  "rating": 4.0,
-  "reviews": 12,
-  "collection": "new-arrivals",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory broderie eyelet bikini set with scalloped trim",
-  "order": 94
- },
- {
-  "slug": "palma-shine-set",
-  "name": "Palma Shine Set",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 37,
-  "collection": "new-arrivals",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a liquid-silver metallic bikini set with a triangle top",
-  "order": 95
- },
- {
-  "slug": "ondine-high-rise-set",
-  "name": "Ondine High-Rise Set",
-  "price": 111.99,
-  "rating": 5.0,
-  "reviews": 60,
-  "collection": "bottoms",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cornflower-blue high-rise swim bottom with a simple matching bandeau top",
-  "order": 96
- },
- {
-  "slug": "cyra-high-rise-set",
-  "name": "Cyra High-Rise Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "bottoms",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a liquid-silver high-rise swim bottom with a simple matching bandeau top",
-  "order": 97
- },
- {
-  "slug": "siena-stripe-set",
-  "name": "Siena Stripe Set",
-  "price": 28.99,
-  "rating": 4.0,
-  "reviews": 18,
-  "collection": "sets",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green and cream striped bikini set with a bandeau top",
-  "order": 98
- },
- {
-  "slug": "mirella-triangle-bikini",
-  "name": "Mirella Triangle Bikini",
-  "price": 44.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "triangle",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a lilac classic triangle bikini with thin halter ties",
-  "order": 99
- },
- {
-  "slug": "talia-linen-set",
-  "name": "Talia Linen Set",
-  "price": 25.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "sets",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a navy linen-look bikini set with a square-neck top",
-  "order": 100
- },
- {
-  "slug": "ximena-ribbed-set",
-  "name": "Ximena Ribbed Set",
-  "price": 42.99,
-  "rating": 4.5,
-  "reviews": 96,
-  "collection": "tops",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow ribbed bikini top with thin straps and matching bottoms",
-  "order": 101
- },
- {
-  "slug": "jovana-triangle-set",
-  "name": "Jovana Triangle Set",
-  "price": 60.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "triangle",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a coral triangle bikini with thin halter ties and side-tie bottoms",
-  "order": 102
- },
- {
-  "slug": "procida-crochet-set",
-  "name": "Procida Crochet Set",
-  "price": 40.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "sets",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cornflower-blue open crochet knit bikini set with scalloped edges",
-  "order": 103
- },
- {
-  "slug": "rivage-signature-swimsuit",
-  "name": "Rivage Signature Swimsuit",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "best-sellers",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a dusty-pink one-piece swimsuit with a scooped back and high leg",
-  "order": 104
- },
- {
-  "slug": "amara-high-waisted-bikini",
-  "name": "Amara High-Waisted Bikini",
-  "price": 30.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "high-waisted",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow high-waisted bikini with a bandeau top and high-rise bottoms",
-  "order": 105
- },
- {
-  "slug": "alba-plunge-swimsuit",
-  "name": "Alba Plunge Swimsuit",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 52,
-  "collection": "one-piece",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white plunge-front one-piece swimsuit with thin straps",
-  "order": 106
- },
- {
-  "slug": "kalea-triangle-bikini",
-  "name": "Kalea Triangle Bikini",
-  "price": 27.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "triangle",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red classic triangle bikini with thin halter ties",
-  "order": 107
- },
- {
-  "slug": "isla-mesh-set",
-  "name": "Isla Mesh Set",
-  "price": 60.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "new-arrivals",
-  "colors": [
-   "Green"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a palm-green mesh-panel bikini set with a halter top",
-  "order": 108
- },
- {
-  "slug": "portofino-strapless-set",
-  "name": "Portofino Strapless Set",
-  "price": 30.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "bandeau",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a rust strapless bandeau bikini set with gold ring hardware",
-  "order": 109
- },
- {
-  "slug": "liora-triangle-set",
-  "name": "Liora Triangle Set",
-  "price": 21.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "triangle",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a dusty-pink triangle bikini with thin halter ties and side-tie bottoms",
-  "order": 110
- },
- {
-  "slug": "ursa-ribbed-set",
-  "name": "Ursa Ribbed Set",
-  "price": 36.99,
-  "rating": 4.5,
-  "reviews": 145,
-  "collection": "tops",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white ribbed bikini top with thin straps and matching bottoms",
-  "order": 111
- },
- {
-  "slug": "kestrel-bikini",
-  "name": "Kestrel Bikini",
-  "price": 46.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "sale",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an olive classic bikini set with thin straps",
-  "order": 112
- },
- {
-  "slug": "lerici-ruched-bandeau",
-  "name": "Lerici Ruched Bandeau",
-  "price": 28.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "bandeau",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta ruched bandeau bikini with gathered detailing",
-  "order": 113
- },
- {
-  "slug": "dalia-plunge-swimsuit",
-  "name": "Dalia Plunge Swimsuit",
-  "price": 51.99,
-  "rating": 5.0,
-  "reviews": 120,
-  "collection": "one-piece",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream plunge-front one-piece swimsuit with thin straps",
-  "order": 114
- },
- {
-  "slug": "lucine-high-rise-set",
-  "name": "Lucine High-Rise Set",
-  "price": 57.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "bottoms",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta high-rise swim bottom with a simple matching bandeau top",
-  "order": 115
- },
- {
-  "slug": "zinnia-scoop-set",
-  "name": "Zinnia Scoop Set",
-  "price": 54.99,
-  "rating": 5.0,
-  "reviews": 37,
-  "collection": "tops",
-  "colors": [
-   "Ivory"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an ivory scoop-neck bikini top with matching simple bottoms",
-  "order": 116
- },
- {
-  "slug": "calypso-bandeau-set",
-  "name": "Calypso Bandeau Set",
-  "price": 36.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "bandeau",
-  "colors": [
-   "Sage"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sage-green strapless bandeau bikini with a twisted front and high-leg bottoms",
-  "order": 117
- },
- {
-  "slug": "serena-wrap-set",
-  "name": "Serena Wrap Set",
-  "price": 85.99,
-  "rating": 4.0,
-  "reviews": 24,
-  "collection": "new-arrivals",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black wrap-front bikini set with ties around the waist",
-  "order": 118
- },
- {
-  "slug": "halcyon-cheeky-set",
-  "name": "Halcyon Cheeky Set",
-  "price": 23.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "bottoms",
-  "colors": [
-   "White"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a crisp white cheeky-cut swim bottom with a simple matching top",
-  "order": 119
- },
- {
-  "slug": "nadia-wrap-one-piece",
-  "name": "Nadia Wrap One-Piece",
-  "price": 63.99,
-  "rating": 4.0,
-  "reviews": 37,
-  "collection": "one-piece",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige wrap-front one-piece swimsuit with a draped bodice",
-  "order": 120
- },
- {
-  "slug": "varigotti-ribbed-bandeau",
-  "name": "Varigotti Ribbed Bandeau",
-  "price": 36.99,
-  "rating": 4.5,
-  "reviews": 120,
-  "collection": "bandeau",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red ribbed strapless bandeau bikini set",
-  "order": 121
- },
- {
-  "slug": "nerina-swimsuit",
-  "name": "Nerina Swimsuit",
-  "price": 111.99,
-  "rating": 4.5,
-  "reviews": 18,
-  "collection": "sale",
-  "colors": [
-   "Teal"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a teal one-piece swimsuit with a scooped neckline",
-  "order": 122
- },
- {
-  "slug": "rhea-crochet-cover-up",
-  "name": "Rhea Crochet Cover-Up",
-  "price": 40.99,
-  "rating": 5.0,
-  "reviews": 44,
-  "collection": "cover-ups",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an olive open-crochet beach cover-up dress worn over a matching bikini",
-  "order": 123
- },
- {
-  "slug": "marisol-mesh-set",
-  "name": "Marisol Mesh Set",
-  "price": 85.99,
-  "rating": 4.5,
-  "reviews": 52,
-  "collection": "new-arrivals",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel mesh-panel bikini set with a halter top",
-  "order": 124
- },
- {
-  "slug": "solara-sculpt-swimsuit",
-  "name": "Solara Sculpt Swimsuit",
-  "price": 111.99,
-  "rating": 5.0,
-  "reviews": 18,
-  "collection": "best-sellers",
-  "colors": [
-   "Rust"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a rust sculpted one-piece swimsuit with a high leg",
-  "order": 125
- },
- {
-  "slug": "perla-mesh-cover-up",
-  "name": "Perla Mesh Cover-Up",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 12,
-  "collection": "cover-ups",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sheer dusty-pink mesh cover-up kaftan open over a matching bikini",
-  "order": 126
- },
- {
-  "slug": "isolde-three-piece-set",
-  "name": "Isolde Three-Piece Set",
-  "price": 28.99,
-  "rating": 4.5,
-  "reviews": 24,
-  "collection": "three-piece",
-  "colors": [
-   "Pink"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a dusty-pink three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
-  "order": 127
- },
- {
-  "slug": "bellis-retro-high-waist",
-  "name": "Bellis Retro High-Waist",
-  "price": 28.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "high-waisted",
-  "colors": [
-   "Black"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a black retro high-waisted bikini with a square-neck top",
-  "order": 128
- },
- {
-  "slug": "lumiere-signature-swimsuit",
-  "name": "Lumière Signature Swimsuit",
-  "price": 63.99,
-  "rating": 5.0,
-  "reviews": 60,
-  "collection": "best-sellers",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown one-piece swimsuit with a scooped back and high leg",
-  "order": 129
- },
- {
-  "slug": "yara-retro-high-waist",
-  "name": "Yara Retro High-Waist",
-  "price": 85.99,
-  "rating": 4.5,
-  "reviews": 60,
-  "collection": "high-waisted",
-  "colors": [
-   "Gold"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a shimmering gold retro high-waisted bikini with a square-neck top",
-  "order": 130
- },
- {
-  "slug": "tindra-scoop-set",
-  "name": "Tindra Scoop Set",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "tops",
-  "colors": [
-   "Navy"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a navy scoop-neck bikini top with matching simple bottoms",
-  "order": 131
- },
- {
-  "slug": "ottilie-bikini",
-  "name": "Ottilie Bikini",
-  "price": 66.99,
-  "rating": 4.5,
-  "reviews": 78,
-  "collection": "sale",
-  "colors": [
-   "Blue"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cornflower-blue classic bikini set with thin straps",
-  "order": 132
- },
- {
-  "slug": "brisa-wrap-set",
-  "name": "Brisa Wrap Set",
-  "price": 27.99,
-  "rating": 5.0,
-  "reviews": 52,
-  "collection": "new-arrivals",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a chocolate-brown wrap-front bikini set with ties around the waist",
-  "order": 133
- },
- {
-  "slug": "elysian-classic-bikini",
-  "name": "Elysian Classic Bikini",
-  "price": 63.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "best-sellers",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta classic bikini set with clean minimal lines",
-  "order": 134
- },
- {
-  "slug": "hella-retro-high-waist",
-  "name": "Hella Retro High-Waist",
-  "price": 70.99,
-  "rating": 5.0,
-  "reviews": 96,
-  "collection": "high-waisted",
-  "colors": [
-   "Terracotta"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a terracotta retro high-waisted bikini with a square-neck top",
-  "order": 135
- },
- {
-  "slug": "verona-linen-set",
-  "name": "Verona Linen Set",
-  "price": 51.99,
-  "rating": 4.0,
-  "reviews": 145,
-  "collection": "sets",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an olive linen-look bikini set with a square-neck top",
-  "order": 136
- },
- {
-  "slug": "etoile-knot-bikini",
-  "name": "Étoile Knot Bikini",
-  "price": 30.99,
-  "rating": 4.0,
-  "reviews": 60,
-  "collection": "best-sellers",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige bikini set with a knotted front top",
-  "order": 137
- },
- {
-  "slug": "enara-retro-high-waist",
-  "name": "Enara Retro High-Waist",
-  "price": 34.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "high-waisted",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige retro high-waisted bikini with a square-neck top",
-  "order": 138
- },
- {
-  "slug": "bandol-tropic-set",
-  "name": "Bandol Tropic Set",
-  "price": 54.99,
-  "rating": 4.0,
-  "reviews": 37,
-  "collection": "sets",
-  "colors": [
-   "Cream"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cream tropical leaf print bikini set",
-  "order": 139
- },
- {
-  "slug": "aria-ribbed-one-piece",
-  "name": "Aria Ribbed One-Piece",
-  "price": 46.99,
-  "rating": 5.0,
-  "reviews": 31,
-  "collection": "one-piece",
-  "colors": [
-   "Chocolate"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a chocolate-brown ribbed one-piece swimsuit with a scooped back",
-  "order": 140
- },
- {
-  "slug": "selva-eyelet-set",
-  "name": "Selva Eyelet Set",
-  "price": 44.99,
-  "rating": 4.0,
-  "reviews": 18,
-  "collection": "new-arrivals",
-  "colors": [
-   "Lilac"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": false,
-  "garment": "a lilac broderie eyelet bikini set with scalloped trim",
-  "order": 141
- },
- {
-  "slug": "ilaria-tie-side-set",
-  "name": "Ilaria Tie-Side Set",
-  "price": 32.99,
-  "rating": 5.0,
-  "reviews": 37,
-  "collection": "bottoms",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige tie-side bikini with small bows at both hips",
-  "order": 142
- },
- {
-  "slug": "beatrix-balconette-set",
-  "name": "Beatrix Balconette Set",
-  "price": 66.99,
-  "rating": 5.0,
-  "reviews": 78,
-  "collection": "tops",
-  "colors": [
-   "Sand"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a sand-beige balconette bikini top with a small ruffle trim and matching bottoms",
-  "order": 143
- },
- {
-  "slug": "ondra-crochet-cover-up",
-  "name": "Ondra Crochet Cover-Up",
-  "price": 78.99,
-  "rating": 5.0,
-  "reviews": 24,
-  "collection": "cover-ups",
-  "colors": [
-   "Red"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a cherry-red open-crochet beach cover-up dress worn over a matching bikini",
-  "order": 144
- },
- {
-  "slug": "zaira-high-rise-bikini",
-  "name": "Zaira High-Rise Bikini",
-  "price": 32.99,
-  "rating": 4.0,
-  "reviews": 52,
-  "collection": "high-waisted",
-  "colors": [
-   "Silver"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a liquid-silver high-rise bikini set with a halter top",
-  "order": 145
- },
- {
-  "slug": "maris-strapless-set",
-  "name": "Maris Strapless Set",
-  "price": 51.99,
-  "rating": 4.5,
-  "reviews": 12,
-  "collection": "bandeau",
-  "colors": [
-   "Olive"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "an olive strapless bandeau bikini set with gold ring hardware",
-  "order": 146
- },
- {
-  "slug": "elan-mesh-swimsuit",
-  "name": "Élan Mesh Swimsuit",
-  "price": 25.99,
-  "rating": 5.0,
-  "reviews": 145,
-  "collection": "best-sellers",
-  "colors": [
-   "Caramel"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a caramel one-piece swimsuit with sheer mesh panels at the waist",
-  "order": 147
- },
- {
-  "slug": "costa-mesh-set",
-  "name": "Costa Mesh Set",
-  "price": 38.99,
-  "rating": 4.5,
-  "reviews": 12,
-  "collection": "new-arrivals",
-  "colors": [
-   "Yellow"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a butter-yellow mesh-panel bikini set with a halter top",
-  "order": 148
- },
- {
-  "slug": "camogli-bandeau-set",
-  "name": "Camogli Bandeau Set",
-  "price": 51.99,
-  "rating": 4.5,
-  "reviews": 44,
-  "collection": "bandeau",
-  "colors": [
-   "Coral"
-  ],
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "inStock": true,
-  "garment": "a coral strapless bandeau bikini with a twisted front and high-leg bottoms",
-  "order": 149
- }
+  {
+    "slug": "milena-mesh-cover-up",
+    "name": "Milena Mesh Cover-Up",
+    "price": 85.99,
+    "rating": 4.5,
+    "reviews": 52,
+    "collection": "cover-ups",
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a sheer black mesh cover-up kaftan open over a black bikini",
+    "order": 1
+  },
+  {
+    "slug": "mira-swimsuit",
+    "name": "Mira Swimsuit",
+    "price": 34.99,
+    "rating": 5.0,
+    "reviews": 31,
+    "collection": "one-piece",
+    "colors": [
+      "Blue"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a sky-blue one-piece swimsuit with a square neckline and thin shoulder straps",
+    "order": 2
+  },
+  {
+    "slug": "noor-sheer-kaftan",
+    "name": "Noor Sheer Kaftan",
+    "price": 74.99,
+    "rating": 4.5,
+    "reviews": 18,
+    "collection": "cover-ups",
+    "colors": [
+      "Ivory"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a long sheer ivory mesh cover-up dress worn over an ivory bikini",
+    "order": 3
+  },
+  {
+    "slug": "calla-crochet-set",
+    "name": "Calla Crochet Set",
+    "price": 23.99,
+    "rating": 4.0,
+    "reviews": 96,
+    "collection": "sets",
+    "colors": [
+      "Sand"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a sand-beige open crochet knit bikini set with scalloped edges",
+    "order": 4
+  },
+  {
+    "slug": "nova-cut-out-swimsuit",
+    "name": "Nova Cut-Out Swimsuit",
+    "price": 30.99,
+    "rating": 5.0,
+    "reviews": 120,
+    "collection": "one-piece",
+    "colors": [
+      "Blue"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a deep azure one-piece swimsuit with sculpted cut-outs at the waist",
+    "order": 5
+  },
+  {
+    "slug": "orla-jersey-set",
+    "name": "Orla Jersey Set",
+    "price": 21.99,
+    "rating": 5.0,
+    "reviews": 44,
+    "collection": "sets",
+    "colors": [
+      "Cream"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cream jersey bikini set, soft triangle top with matching mid-rise bottoms",
+    "order": 6
+  },
+  {
+    "slug": "estella-halter-one-piece",
+    "name": "Estella Halter One-Piece",
+    "price": 32.99,
+    "rating": 5.0,
+    "reviews": 12,
+    "collection": "one-piece",
+    "colors": [
+      "Caramel"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a caramel halter-neck one-piece swimsuit",
+    "order": 7
+  },
+  {
+    "slug": "riviera-crochet-set",
+    "name": "Riviera Crochet Set",
+    "price": 36.99,
+    "rating": 5.0,
+    "reviews": 145,
+    "collection": "sets",
+    "colors": [
+      "Yellow"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a butter-yellow open crochet knit bikini set with scalloped edges",
+    "order": 8
+  },
+  {
+    "slug": "fiorella-high-rise-bikini",
+    "name": "Fiorella High-Rise Bikini",
+    "price": 111.99,
+    "rating": 5.0,
+    "reviews": 78,
+    "collection": "high-waisted",
+    "colors": [
+      "Caramel"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a caramel high-rise bikini set with a halter top",
+    "order": 9
+  },
+  {
+    "slug": "dune-classic-bikini",
+    "name": "Dune Classic Bikini",
+    "price": 51.99,
+    "rating": 4.0,
+    "reviews": 120,
+    "collection": "best-sellers",
+    "colors": [
+      "Lilac"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a lilac classic bikini set with clean minimal lines",
+    "order": 10
+  },
+  {
+    "slug": "mirabel-stripe-set",
+    "name": "Mirabel Stripe Set",
+    "price": 60.99,
+    "rating": 4.0,
+    "reviews": 96,
+    "collection": "sets",
+    "colors": [
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a crisp white and cream striped bikini set with a bandeau top",
+    "order": 11
+  },
+  {
+    "slug": "giselle-three-piece-set",
+    "name": "Giselle Three-Piece Set",
+    "price": 40.99,
+    "rating": 5.0,
+    "reviews": 44,
+    "collection": "three-piece",
+    "colors": [
+      "Coral"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a coral three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
+    "order": 12
+  },
+  {
+    "slug": "cove-swimsuit",
+    "name": "Cove Swimsuit",
+    "price": 30.99,
+    "rating": 4.5,
+    "reviews": 44,
+    "collection": "one-piece",
+    "colors": [
+      "Terracotta"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a terracotta one-piece swimsuit with a square neckline and thin shoulder straps",
+    "order": 13
+  },
+  {
+    "slug": "jolie-cheeky-set",
+    "name": "Jolie Cheeky Set",
+    "price": 21.99,
+    "rating": 5.0,
+    "reviews": 78,
+    "collection": "bottoms",
+    "colors": [
+      "Caramel"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a caramel cheeky-cut swim bottom with a simple matching top",
+    "order": 14
+  },
+  {
+    "slug": "fiora-mid-rise-set",
+    "name": "Fiora Mid-Rise Set",
+    "price": 27.99,
+    "rating": 5.0,
+    "reviews": 78,
+    "collection": "bottoms",
+    "colors": [
+      "Ivory"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "an ivory mid-rise swim bottom with a matching scoop top",
+    "order": 15
+  },
+  {
+    "slug": "baia-knot-bikini",
+    "name": "Baia Knot Bikini",
+    "price": 23.99,
+    "rating": 5.0,
+    "reviews": 52,
+    "collection": "best-sellers",
+    "colors": [
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a crisp white bikini set with a knotted front top",
+    "order": 16
+  },
+  {
+    "slug": "cassis-stripe-set",
+    "name": "Cassis Stripe Set",
+    "price": 48.99,
+    "rating": 5.0,
+    "reviews": 18,
+    "collection": "sets",
+    "colors": [
+      "Rust"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a rust and cream striped bikini set with a bandeau top",
+    "order": 17
+  },
+  {
+    "slug": "vita-swimsuit",
+    "name": "Vita Swimsuit",
+    "price": 46.99,
+    "rating": 5.0,
+    "reviews": 60,
+    "collection": "one-piece",
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a black one-piece swimsuit with a square neckline and thin shoulder straps",
+    "order": 18
+  },
+  {
+    "slug": "solene-triangle-set",
+    "name": "Solene Triangle Set",
+    "price": 111.99,
+    "rating": 5.0,
+    "reviews": 78,
+    "collection": "triangle",
+    "colors": [
+      "Blue"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cornflower-blue triangle bikini with thin halter ties and side-tie bottoms",
+    "order": 19
+  },
+  {
+    "slug": "gaia-high-waisted-bikini",
+    "name": "Gaia High-Waisted Bikini",
+    "price": 54.99,
+    "rating": 5.0,
+    "reviews": 78,
+    "collection": "high-waisted",
+    "colors": [
+      "Chocolate"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a chocolate-brown high-waisted bikini with a bandeau top and high-rise bottoms",
+    "order": 20
+  },
+  {
+    "slug": "indra-triangle-bikini",
+    "name": "Indra Triangle Bikini",
+    "price": 151.99,
+    "rating": 4.5,
+    "reviews": 78,
+    "collection": "triangle",
+    "colors": [
+      "Rust"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a rust classic triangle bikini with thin halter ties",
+    "order": 21
+  },
+  {
+    "slug": "soleil-jersey-set",
+    "name": "Soleil Jersey Set",
+    "price": 25.99,
+    "rating": 4.0,
+    "reviews": 120,
+    "collection": "sets",
+    "colors": [
+      "Silver"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a liquid-silver jersey bikini set, soft triangle top with matching mid-rise bottoms",
+    "order": 22
+  },
+  {
+    "slug": "rosalind-triangle-bikini",
+    "name": "Rosalind Triangle Bikini",
+    "price": 51.99,
+    "rating": 4.5,
+    "reviews": 44,
+    "collection": "triangle",
+    "colors": [
+      "Teal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a teal classic triangle bikini with thin halter ties",
+    "order": 23
+  },
+  {
+    "slug": "lune-classic-bikini",
+    "name": "Lune Classic Bikini",
+    "price": 151.99,
+    "rating": 4.5,
+    "reviews": 52,
+    "collection": "best-sellers",
+    "colors": [
+      "Blue"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a cornflower-blue classic bikini set with clean minimal lines",
+    "order": 24
+  },
+  {
+    "slug": "ponza-twist-bandeau",
+    "name": "Ponza Twist Bandeau",
+    "price": 51.99,
+    "rating": 4.5,
+    "reviews": 12,
+    "collection": "bandeau",
+    "colors": [
+      "Chocolate"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a chocolate-brown twisted bandeau bikini set",
+    "order": 25
+  },
+  {
+    "slug": "saskia-mesh-cover-up",
+    "name": "Saskia Mesh Cover-Up",
+    "price": 32.99,
+    "rating": 4.0,
+    "reviews": 145,
+    "collection": "cover-ups",
+    "colors": [
+      "Sage"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a sheer sage-green mesh cover-up kaftan open over a matching bikini",
+    "order": 26
+  },
+  {
+    "slug": "neve-wrap-set",
+    "name": "Neve Wrap Set",
+    "price": 21.99,
+    "rating": 5.0,
+    "reviews": 44,
+    "collection": "new-arrivals",
+    "colors": [
+      "Pink"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a dusty-pink wrap-front bikini set with ties around the waist",
+    "order": 27
+  },
+  {
+    "slug": "nerida-twist-bandeau",
+    "name": "Nerida Twist Bandeau",
+    "price": 54.99,
+    "rating": 5.0,
+    "reviews": 120,
+    "collection": "bandeau",
+    "colors": [
+      "Teal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a teal twisted bandeau bikini set",
+    "order": 28
+  },
+  {
+    "slug": "ulla-crochet-cover-up",
+    "name": "Ulla Crochet Cover-Up",
+    "price": 34.99,
+    "rating": 5.0,
+    "reviews": 18,
+    "collection": "cover-ups",
+    "colors": [
+      "Teal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a teal open-crochet beach cover-up dress worn over a matching bikini",
+    "order": 29
+  },
+  {
+    "slug": "sirena-seersucker-set",
+    "name": "Sirena Seersucker Set",
+    "price": 21.99,
+    "rating": 4.5,
+    "reviews": 24,
+    "collection": "new-arrivals",
+    "colors": [
+      "Rust"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a rust seersucker check bikini set with a ruffled balconette top",
+    "order": 30
+  },
+  {
+    "slug": "maren-bikini",
+    "name": "Maren Bikini",
+    "price": 27.99,
+    "rating": 4.5,
+    "reviews": 96,
+    "collection": "sale",
+    "colors": [
+      "Green"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a palm-green classic bikini set with thin straps",
+    "order": 31
+  },
+  {
+    "slug": "cressida-three-piece-set",
+    "name": "Cressida Three-Piece Set",
+    "price": 57.99,
+    "rating": 4.5,
+    "reviews": 120,
+    "collection": "three-piece",
+    "colors": [
+      "Caramel"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a caramel three-piece swim set: triangle top, bottoms and a matching sheer wrap skirt",
+    "order": 32
+  },
+  {
+    "slug": "cascade-sculpt-swimsuit",
+    "name": "Cascade Sculpt Swimsuit",
+    "price": 21.99,
+    "rating": 5.0,
+    "reviews": 12,
+    "collection": "best-sellers",
+    "colors": [
+      "Navy"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a navy sculpted one-piece swimsuit with a high leg",
+    "order": 33
+  },
+  {
+    "slug": "alassio-twist-bandeau",
+    "name": "Alassio Twist Bandeau",
+    "price": 93.99,
+    "rating": 4.5,
+    "reviews": 31,
+    "collection": "bandeau",
+    "colors": [
+      "Pink"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a dusty-pink twisted bandeau bikini set",
+    "order": 34
+  },
+  {
+    "slug": "flora-knot-bikini",
+    "name": "Flora Knot Bikini",
+    "price": 32.99,
+    "rating": 4.5,
+    "reviews": 96,
+    "collection": "best-sellers",
+    "colors": [
+      "Coral"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a coral bikini set with a knotted front top",
+    "order": 35
+  },
+  {
+    "slug": "marin-plunge-swimsuit",
+    "name": "Marin Plunge Swimsuit",
+    "price": 48.99,
+    "rating": 4.5,
+    "reviews": 120,
+    "collection": "one-piece",
+    "colors": [
+      "Coral"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a coral plunge-front one-piece swimsuit with thin straps",
+    "order": 36
+  },
+  {
+    "slug": "wilda-scoop-set",
+    "name": "Wilda Scoop Set",
+    "price": 21.99,
+    "rating": 5.0,
+    "reviews": 37,
+    "collection": "tops",
+    "colors": [
+      "Silver"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a liquid-silver scoop-neck bikini top with matching simple bottoms",
+    "order": 37
+  },
+  {
+    "slug": "oria-mesh-set",
+    "name": "Oria Mesh Set",
+    "price": 23.99,
+    "rating": 4.5,
+    "reviews": 31,
+    "collection": "new-arrivals",
+    "colors": [
+      "Red"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cherry-red mesh-panel bikini set with a halter top",
+    "order": 38
+  },
+  {
+    "slug": "ischia-jersey-set",
+    "name": "Ischia Jersey Set",
+    "price": 78.99,
+    "rating": 5.0,
+    "reviews": 145,
+    "collection": "sets",
+    "colors": [
+      "Teal"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a teal jersey bikini set, soft triangle top with matching mid-rise bottoms",
+    "order": 39
+  },
+  {
+    "slug": "kaia-mid-rise-set",
+    "name": "Kaia Mid-Rise Set",
+    "price": 30.99,
+    "rating": 4.5,
+    "reviews": 37,
+    "collection": "bottoms",
+    "colors": [
+      "Chocolate"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a chocolate-brown mid-rise swim bottom with a matching scoop top",
+    "order": 40
+  },
+  {
+    "slug": "vedette-balconette-set",
+    "name": "Vedette Balconette Set",
+    "price": 21.99,
+    "rating": 4.0,
+    "reviews": 31,
+    "collection": "tops",
+    "colors": [
+      "Gold"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a shimmering gold balconette bikini top with a small ruffle trim and matching bottoms",
+    "order": 41
+  },
+  {
+    "slug": "brio-wrap-one-piece",
+    "name": "Brio Wrap One-Piece",
+    "price": 54.99,
+    "rating": 5.0,
+    "reviews": 24,
+    "collection": "one-piece",
+    "colors": [
+      "Red"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cherry-red wrap-front one-piece swimsuit with a draped bodice",
+    "order": 42
+  },
+  {
+    "slug": "orinda-triangle-bikini",
+    "name": "Orinda Triangle Bikini",
+    "price": 57.99,
+    "rating": 5.0,
+    "reviews": 52,
+    "collection": "triangle",
+    "colors": [
+      "Sage"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a sage-green classic triangle bikini with thin halter ties",
+    "order": 43
+  },
+  {
+    "slug": "lira-cut-out-swimsuit",
+    "name": "Lira Cut-Out Swimsuit",
+    "price": 28.99,
+    "rating": 4.0,
+    "reviews": 44,
+    "collection": "one-piece",
+    "colors": [
+      "Rust"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a rust one-piece swimsuit with sculpted cut-outs at the waist",
+    "order": 44
+  },
+  {
+    "slug": "riva-cut-out-swimsuit",
+    "name": "Riva Cut-Out Swimsuit",
+    "price": 30.99,
+    "rating": 5.0,
+    "reviews": 18,
+    "collection": "one-piece",
+    "colors": [
+      "Ivory"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "an ivory one-piece swimsuit with sculpted cut-outs at the waist",
+    "order": 45
+  },
+  {
+    "slug": "noir-signature-swimsuit",
+    "name": "Noir Signature Swimsuit",
+    "price": 48.99,
+    "rating": 5.0,
+    "reviews": 60,
+    "collection": "best-sellers",
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a black one-piece swimsuit with a scooped back and high leg",
+    "order": 46
+  },
+  {
+    "slug": "sole-ribbed-one-piece",
+    "name": "Sole Ribbed One-Piece",
+    "price": 34.99,
+    "rating": 5.0,
+    "reviews": 145,
+    "collection": "one-piece",
+    "colors": [
+      "Yellow"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a butter-yellow ribbed one-piece swimsuit with a scooped back",
+    "order": 47
+  },
+  {
+    "slug": "giada-high-rise-set",
+    "name": "Giada High-Rise Set",
+    "price": 93.99,
+    "rating": 4.5,
+    "reviews": 18,
+    "collection": "bottoms",
+    "colors": [
+      "Cream"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cream high-rise swim bottom with a simple matching bandeau top",
+    "order": 48
+  },
+  {
+    "slug": "selene-tie-side-set",
+    "name": "Selene Tie-Side Set",
+    "price": 111.99,
+    "rating": 4.0,
+    "reviews": 37,
+    "collection": "bottoms",
+    "colors": [
+      "Navy"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a navy tie-side bikini with small bows at both hips",
+    "order": 49
+  },
+  {
+    "slug": "cielo-classic-bikini",
+    "name": "Cielo Classic Bikini",
+    "price": 151.99,
+    "rating": 5.0,
+    "reviews": 31,
+    "collection": "best-sellers",
+    "colors": [
+      "Ivory"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "an ivory classic bikini set with clean minimal lines",
+    "order": 50
+  },
+  {
+    "slug": "esme-cheeky-set",
+    "name": "Esmé Cheeky Set",
+    "price": 28.99,
+    "rating": 4.0,
+    "reviews": 120,
+    "collection": "bottoms",
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": false,
+    "garment": "a black cheeky-cut swim bottom with a simple matching top",
+    "order": 51
+  },
+  {
+    "slug": "pavi-triangle-set",
+    "name": "Pavi Triangle Set",
+    "price": 93.99,
+    "rating": 5.0,
+    "reviews": 37,
+    "collection": "triangle",
+    "colors": [
+      "Green"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a palm-green triangle bikini with thin halter ties and side-tie bottoms",
+    "order": 52
+  },
+  {
+    "slug": "xanthe-high-waisted-bikini",
+    "name": "Xanthe High-Waisted Bikini",
+    "price": 23.99,
+    "rating": 5.0,
+    "reviews": 44,
+    "collection": "high-waisted",
+    "colors": [
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a crisp white high-waisted bikini with a bandeau top and high-rise bottoms",
+    "order": 53
+  },
+  {
+    "slug": "delia-trio-set",
+    "name": "Delia Trio Set",
+    "price": 32.99,
+    "rating": 5.0,
+    "reviews": 31,
+    "collection": "three-piece",
+    "colors": [
+      "Chocolate"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a chocolate-brown three-piece swim set: bandeau top, bottoms and a matching tie skirt",
+    "order": 54
+  },
+  {
+    "slug": "azure-sculpt-swimsuit",
+    "name": "Azure Sculpt Swimsuit",
+    "price": 54.99,
+    "rating": 5.0,
+    "reviews": 120,
+    "collection": "best-sellers",
+    "colors": [
+      "Cream"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "inStock": true,
+    "garment": "a cream sculpted one-piece swimsuit with a high leg",
+    "order": 55
+  }
 ]
