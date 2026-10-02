@@ -38,7 +38,11 @@ function col(slug: CollectionSlug) {
 }
 
 // Between them the three columns name all twelve collections exactly once, so
-// every one is reachable from the menu and none is listed twice.
+// every one is reachable from the menu and none is listed twice. Every column
+// ends at All Products: a shopper who has read a column and not found what they
+// want wants the whole catalogue, not an index of the same column's headings.
+// The Collections index is still reached from the footer and from EXPLORE ALL
+// on the home page.
 const MEGA_MENU = [
   {
     heading: "Featured",
@@ -53,7 +57,7 @@ const MEGA_MENU = [
       col("bandeau"),
       col("high-waisted"),
       col("three-piece"),
-      { label: "Shop all", to: "/collections" },
+      { label: "Shop all", to: "/products" },
     ],
   },
   {
