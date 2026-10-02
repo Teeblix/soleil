@@ -28,13 +28,21 @@ class BadFraming(Exception):
     """The source frame cuts through the subject, so it cannot be measured."""
 
 
-def backdrop(a: np.ndarray) -> np.ndarray:
-    """Backdrop colour sampled from the top corners, where the model is not.
-    Not every generation comes back pure white; some are warm off-white."""
-    h, w, _ = a.shape
-    k = max(8, min(h, w) // 40)
-    corners = np.concatenate([a[:k, :k].reshape(-1, 3), a[:k, -k:].reshape(-1, 3)])
-    return np.median(corners, axis=0)
+def backdrop_rows(a: np.ndarray) -> np.ndarray:
+    """Backdrop colour per row, read from the strips down the left and right
+    edges. A single sample from the top corners is not enough: some studios
+    light the seamless unevenly, so the backdrop beside the hips can be
+    several levels lighter than the backdrop beside the head. Remapping all of
+    it against one colour then leaves a faint panel across the middle of the
+    card. The side strips are backdrop on every frame that passes the guards,
+    which reject a body running off a side."""
+    k = max(4, a.shape[1] // 25)
+    sides = np.concatenate([a[:, :k], a[:, -k:]], axis=1)
+    rows = np.median(sides, axis=1)                     # (h, 3)
+    # Smooth vertically so one row crossing an arm cannot shift the estimate.
+    pad = np.pad(rows, ((8, 8), (0, 0)), mode="edge")
+    kern = np.ones(17) / 17
+    return np.stack([np.convolve(pad[:, c], kern, "valid") for c in range(3)], axis=1)
 
 
 def subject_box(d: np.ndarray):
@@ -52,26 +60,41 @@ def subject_box(d: np.ndarray):
 def compose(src: str, dst: str, strict: bool = True) -> int:
     im = Image.open(src).convert("RGB")
     a = np.asarray(im)
-    bg = backdrop(a)
-    box = subject_box(np.abs(a.astype(np.float32) - bg).max(axis=2))
+    src_a = a.astype(np.float32)
+    h, w = a.shape[:2]
+
+    # Measure against the per-row backdrop too, not just remap against it. A
+    # frame lit with a vignette has corners several levels darker than the
+    # middle, so a single corner sample makes the whole picture read as
+    # subject and a perfectly good shot gets thrown out.
+    rows_bg = backdrop_rows(src_a)
+    bg = np.median(rows_bg, axis=0)
+    # A row whose side strips are far from that is a row where the body runs
+    # off the side, so its estimate is the body, not the backdrop. Fall back to
+    # the global colour there, and count the rows: enough of them means the
+    # frame genuinely cuts the model off at the side.
+    off_side = np.abs(rows_bg - bg).max(axis=1) > SUBJECT
+    rows_bg[off_side] = bg
+    d = np.abs(src_a - rows_bg[:, None, :]).max(axis=2)
+
+    box = subject_box(d)
     if box is None:
         raise BadFraming(src)
 
     left, top, right, bottom = box
-    h, w = a.shape[:2]
     if strict:
         # These look for the frame genuinely cutting through the model, not
         # for a stray pixel: a faint vignette reads as a thin smear down a
         # whole edge, and hair grazing the top is not a cropped head. The
         # thresholds are set from measured good and bad frames.
-        m = np.abs(a.astype(np.float32) - bg).max(axis=2) > SUBJECT
+        m = d > SUBJECT
+        if off_side.sum() > 0.45 * h:
+            raise BadFraming(src)          # body running off a side
         # The crown must be clear of the top. Hair reaching the edge is a
         # cropped head on the card, so the tolerance here is only wide enough
         # for a few stray pixels, not for a band of hair.
         if m[0].sum() > 0.02 * w:
             raise BadFraming(src)
-        if (m[:, 0].sum() > 0.45 * h) or (m[:, -1].sum() > 0.45 * h):
-            raise BadFraming(src)          # body running off a side
         # The thighs must run off the bottom. A shot that stops short is a
         # full-length frame, whose box spans head-to-ankle rather than
         # head-to-thigh, and scaling by it would render that model smaller
@@ -89,19 +112,19 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
         if body and crown / body > 0.25:
             raise BadFraming(src)
 
+    # Remap while the source is still at its own scale, against the same
+    # per-row backdrop the measurement used.
+    t = np.clip((FAR - d) / (FAR - NEAR), 0, 1)[..., None]         # 1 on the backdrop
+    flat = src_a * (1 - t) + np.array(CARD, dtype=np.float32) * t
+    im = Image.fromarray(flat.astype(np.uint8))
+
     scale = (FIGURE_H * H) / (bottom - top + 1)
     im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
 
     canvas = Image.new("RGB", (W, H), CARD)
     canvas.paste(im, (round(W / 2 - (left + right) / 2 * scale),   # centred on the subject
                       round(H - (bottom + 1) * scale)))            # sat on the bottom edge
-
-    a = np.asarray(canvas).astype(np.float32)
-    d = np.abs(a - bg).max(axis=2)
-    t = np.clip((FAR - d) / (FAR - NEAR), 0, 1)[..., None]         # 1 on the backdrop
-    out = a * (1 - t) + np.array(CARD, dtype=np.float32) * t
-    Image.fromarray(out.astype(np.uint8)).save(
-        dst, "JPEG", quality=82, optimize=True, progressive=True)
+    canvas.save(dst, "JPEG", quality=82, optimize=True, progressive=True)
     return os.path.getsize(dst) // 1024
 
 
