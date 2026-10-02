@@ -4,13 +4,13 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Home } from "./pages/Home";
 import { Collections } from "./pages/Collections";
 import { Products } from "./pages/Products";
+import { Product } from "./pages/Product";
 import { ComingSoon } from "./pages/ComingSoon";
 import { EASE } from "./lib/motion";
 import { FavouritesProvider } from "./lib/favourites";
 import { Toasts } from "./components/Toasts";
 
 const STUB_PAGES: { path: string; title: string }[] = [
-  { path: "/product/:slug", title: "Product" },
   { path: "/lookbook", title: "Lookbook" },
   { path: "/about", title: "About" },
   { path: "/blog", title: "Blog" },
@@ -56,6 +56,7 @@ function AnimatedRoutes() {
             <Route path="/collections" element={<Collections />} />
         <Route path="/collections/:slug" element={<Products />} />
         <Route path="/products" element={<Products />} />
+            <Route path="/product/:slug" element={<Product />} />
             {STUB_PAGES.map((page) => (
               <Route key={page.path} path={page.path} element={<ComingSoon title={page.title} />} />
             ))}

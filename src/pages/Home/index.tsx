@@ -4,7 +4,7 @@ import { FreshForSummer } from "./FreshForSummer";
 import { BrandStory } from "./BrandStory";
 import { ExploreEverything } from "./ExploreEverything";
 import { AsSeenOn } from "./AsSeenOn";
-import { Testimonials } from "./Testimonials";
+import { Testimonials } from "../../components/Testimonials";
 import { FinalCta } from "./FinalCta";
 import { TrustBadges } from "../../components/TrustBadges";
 import { Footer } from "../../components/Footer";

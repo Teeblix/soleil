@@ -11,6 +11,9 @@ export type Product = {
   colors: string[];
   sizes: string[];
   inStock: boolean;
+  /** The written description the imagery was shot from; the detail page builds
+   *  its copy out of it rather than carrying a second, driftable blurb. */
+  garment: string;
   /** Resolved asset URLs. Undefined until that product's photography exists. */
   front?: string;
   back?: string;
