@@ -1,6 +1,7 @@
 import { useState, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { Stars } from "./Stars";
+import { Price } from "../../lib/currency";
 import { useFavourites } from "../../lib/favourites";
 import type { Product } from "../../lib/shopData";
 
@@ -73,8 +74,11 @@ export function ProductCard({ product }: { product: Product }) {
           aria-label={
             favourite ? `Remove ${product.name} from favourites` : `Add ${product.name} to favourites`
           }
-          className={`absolute right-3 top-3 flex size-8 items-center justify-center bg-white/90 transition-colors hover:bg-white ${
-            favourite ? "text-ink" : "text-muted"
+          // No plate behind it: the icon sits straight on the card. Drawn in
+          // ink rather than white because the card is a flat light grey and the
+          // model is centred, so this corner is background on every product.
+          className={`absolute right-3 top-3 flex size-8 items-center justify-center transition-colors ${
+            favourite ? "text-ink" : "text-ink/55 hover:text-ink"
           }`}
         >
           <Heart filled={favourite} />
@@ -88,7 +92,7 @@ export function ProductCard({ product }: { product: Product }) {
             <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition-transform duration-500 ease-in-out group-hover:scale-x-100" />
           </span>
         </Link>
-        <p className="text-[18px] text-ink">${product.price.toFixed(2)}</p>
+        <Price usd={product.price} className="text-[18px] text-ink" />
         <div className="flex items-center gap-3">
           <Stars rating={product.rating} className="text-ink" />
           <span className="text-[13px] tracking-[0.4px] text-muted">

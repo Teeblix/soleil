@@ -15,6 +15,7 @@ import { FeaturedReview } from "../../components/product/FeaturedReview";
 import { WhyYouWillLoveIt } from "../../components/product/WhyYouWillLoveIt";
 import { YouMayAlsoLike } from "../../components/product/YouMayAlsoLike";
 import { useFavourites } from "../../lib/favourites";
+import { Price, useCurrency } from "../../lib/currency";
 import { PRODUCTS } from "../../lib/shopData";
 import { CARE_INSTRUCTION, SHIPPING_RETURNS, productCopy } from "../../lib/pdp";
 import { collectionBySlug } from "../../lib/catalogue";
@@ -32,6 +33,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
   const [size, setSize] = useState(product.sizes[0]);
   const [open, setOpen] = useState<string | null>(null);
   const { isFavourite, toggleFavourite } = useFavourites();
+  const { format } = useCurrency();
 
   const copy = productCopy(product);
   const collection = collectionBySlug(product.collection);
@@ -95,7 +97,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
                   <h1 className="font-display text-[28px] font-medium uppercase text-ink sm:text-[34px]">
                     {product.name}
                   </h1>
-                  <p className="text-[26px] text-ink">${product.price.toFixed(2)}</p>
+                  <Price usd={product.price} className="text-[26px] text-ink" />
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -148,7 +150,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
                       disabled={!product.inStock}
                       className="relative h-[53px] w-full overflow-hidden bg-ink text-[15px] tracking-[0.8px] text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
                     >
-                      <span className="relative z-10">BUY NOW - ${product.price.toFixed(2)}</span>
+                      <span className="relative z-10">BUY NOW - {format(product.price)}</span>
                       <span className="absolute inset-0 origin-left scale-x-0 bg-white/15 transition-transform duration-500 ease-out hover:scale-x-100" />
                     </button>
                   </div>

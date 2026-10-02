@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { CURRENCIES, useCurrency } from "../lib/currency";
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "./ui/Button";
 
@@ -42,12 +43,14 @@ const SOCIALS = [
   { icon: socialTiktok, label: "TikTok" },
 ];
 
-const CURRENCIES = [
-  { code: "USD", symbol: "$", country: "United States", flag: flagUS },
-  { code: "GBP", symbol: "£", country: "United Kingdom", flag: flagGB },
-  { code: "EUR", symbol: "€", country: "European Union", flag: flagEU },
-  { code: "AUD", symbol: "$", country: "Australia", flag: flagAU },
-];
+/** Flags live here; the codes, symbols and rates live with the prices they
+ *  convert, so the selector cannot offer a currency nothing can be priced in. */
+const FLAGS: Record<string, string> = {
+  USD: flagUS,
+  GBP: flagGB,
+  EUR: flagEU,
+  AUD: flagAU,
+};
 
 function UnderlineLink({ to, children, className = "" }: { to: string; children: ReactNode; className?: string }) {
   return (
@@ -75,7 +78,9 @@ function FooterLinkList({ title, links }: { title: string; links: { label: strin
 
 function CurrencySelector() {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(CURRENCIES[0]);
+  // Shared, so picking a currency here reprices every card and product page
+  // rather than only relabelling this button.
+  const { currency: selected, setCurrency } = useCurrency();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -95,7 +100,7 @@ function CurrencySelector() {
         aria-expanded={open}
         className="flex items-center gap-1.5 text-[16px] font-light text-ink"
       >
-        <img src={selected.flag} alt="" className="size-6 rounded-full object-cover" />
+        <img src={FLAGS[selected.code]} alt="" className="size-6 rounded-full object-cover" />
         <span>
           {selected.country} ({selected.code} {selected.symbol})
         </span>
@@ -122,14 +127,14 @@ function CurrencySelector() {
                   role="option"
                   aria-selected={currency.code === selected.code}
                   onClick={() => {
-                    setSelected(currency);
+                    setCurrency(currency.code);
                     setOpen(false);
                   }}
                   className={`flex w-full items-center gap-2.5 px-4 py-2 text-left text-[15px] transition-colors hover:bg-cream-2 ${
                     currency.code === selected.code ? "bg-cream" : ""
                   }`}
                 >
-                  <img src={currency.flag} alt="" className="size-5 rounded-full object-cover" />
+                  <img src={FLAGS[currency.code]} alt="" className="size-5 rounded-full object-cover" />
                   <span className="text-ink">{currency.country}</span>
                   <span className="ml-auto pl-4 text-muted">
                     {currency.code} {currency.symbol}

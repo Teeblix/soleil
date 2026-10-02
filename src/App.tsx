@@ -8,6 +8,7 @@ import { Product } from "./pages/Product";
 import { ComingSoon } from "./pages/ComingSoon";
 import { EASE } from "./lib/motion";
 import { FavouritesProvider } from "./lib/favourites";
+import { CurrencyProvider } from "./lib/currency";
 import { Toasts } from "./components/Toasts";
 
 const STUB_PAGES: { path: string; title: string }[] = [
@@ -70,12 +71,14 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <FavouritesProvider>
-      <BrowserRouter>
+    <CurrencyProvider>
+      <FavouritesProvider>
+        <BrowserRouter>
         <AnimatedRoutes />
         <Toasts />
-      </BrowserRouter>
-    </FavouritesProvider>
+        </BrowserRouter>
+      </FavouritesProvider>
+    </CurrencyProvider>
   );
 }
 
