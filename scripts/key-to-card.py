@@ -60,9 +60,15 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
     left, top, right, bottom = box
     h, w = a.shape[:2]
     if strict:
-        # Head clear of the top, body clear of the sides.
-        if top <= EDGE or left <= EDGE or right >= w - EDGE:
+        # These look for the frame genuinely cutting through the model, not
+        # for a stray pixel: a faint vignette reads as a thin smear down a
+        # whole edge, and hair grazing the top is not a cropped head. The
+        # thresholds are set from measured good and bad frames.
+        m = np.abs(a.astype(np.float32) - bg).max(axis=2) > SUBJECT
+        if m[0].sum() > 0.25 * w:          # head or shoulders cut by the top
             raise BadFraming(src)
+        if (m[:, 0].sum() > 0.45 * h) or (m[:, -1].sum() > 0.45 * h):
+            raise BadFraming(src)          # body running off a side
         # The thighs must run off the bottom. A shot that stops short is a
         # full-length frame, whose box spans head-to-ankle rather than
         # head-to-thigh, and scaling by it would render that model smaller
