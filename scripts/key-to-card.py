@@ -58,10 +58,21 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
         raise BadFraming(src)
 
     left, top, right, bottom = box
-    # The thighs sitting on the bottom edge is the intended crop, so only the
-    # head and the sides must be clear of the frame.
-    if strict and (top <= EDGE or left <= EDGE or right >= a.shape[1] - EDGE):
-        raise BadFraming(src)
+    h, w = a.shape[:2]
+    if strict:
+        # Head clear of the top, body clear of the sides.
+        if top <= EDGE or left <= EDGE or right >= w - EDGE:
+            raise BadFraming(src)
+        # The thighs must run off the bottom. A shot that stops short is a
+        # full-length frame, whose box spans head-to-ankle rather than
+        # head-to-thigh, and scaling by it would render that model smaller
+        # than every other card.
+        if bottom < h - EDGE:
+            raise BadFraming(src)
+        # Whether the shot actually contains a head, and whether the model is
+        # framed like the others, is not reliably measurable here - a headless
+        # mannequin crop passes every geometric test. Those are caught by
+        # reviewing each batch as a contact sheet before it is accepted.
 
     scale = (FIGURE_H * H) / (bottom - top + 1)
     im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
