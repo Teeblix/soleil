@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { COLLECTION_META, type CollectionMeta, type CollectionSlug } from "../lib/catalogue";
+import { EASE } from "../lib/motion";
 
 import soleilLight from "../assets/common/imgSoleilLight.svg";
 import soleilDark from "../assets/common/imgSoleilDark.svg";
@@ -141,7 +142,12 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const isLight = variant === "transparent" && !menuOpen;
+  // Either menu being open fills the bar and darkens its contents. The phone
+  // menu used to be left out of this, so on a page with a transparent header
+  // it opened a solid panel under a still-transparent bar, leaving the white
+  // logo sitting on the hero photograph above it.
+  const anyMenuOpen = menuOpen || mobileOpen;
+  const isLight = variant === "transparent" && !anyMenuOpen;
   const textColor = isLight ? "text-white" : "text-ink";
   const logo = isLight ? soleilLight : soleilDark;
   const chevron = isLight ? chevronLight : chevronDark;
@@ -149,7 +155,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
     ? { search: searchLight, user: userLight, bag: bagLight }
     : { search: searchDark, user: userDark, bag: bagDark };
 
-  const headerBg = menuOpen ? "bg-[#f0f0ef]" : variant === "solid" ? "bg-paper" : "";
+  const headerBg = anyMenuOpen ? "bg-[#f0f0ef]" : variant === "solid" ? "bg-paper" : "";
 
   return (
     <header
@@ -203,16 +209,30 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           <IconButton label="Cart" icon={icons.bag} to="/cart" />
         </div>
 
+        {/* The three rules are stacked on the same centre line and held apart by
+            a translate, so opening the menu only has to drop that translate and
+            rotate the outer two into a cross. */}
         <button
-          className={`lg:hidden ${textColor}`}
-          aria-label="Menu"
+          className={`relative size-6 lg:hidden ${textColor}`}
+          aria-label={mobileOpen ? "Close menu" : "Menu"}
+          aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
         >
-          <div className="flex flex-col gap-1.5">
-            <span className="block h-px w-6 bg-current" />
-            <span className="block h-px w-6 bg-current" />
-            <span className="block h-px w-6 bg-current" />
-          </div>
+          <span
+            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
+              mobileOpen ? "rotate-45" : "-translate-y-[5px]"
+            }`}
+          />
+          <span
+            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-opacity duration-200 ${
+              mobileOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
+              mobileOpen ? "-rotate-45" : "translate-y-[5px]"
+            }`}
+          />
         </button>
       </div>
 
@@ -262,34 +282,58 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
         )}
       </AnimatePresence>
 
-      {mobileOpen && (
-        <div className="flex flex-col gap-7 border-t border-line bg-paper px-5 py-6 text-ink lg:hidden">
-          {/* Every column, not just the first. The collections sit in the second
-              and third, so showing only Featured left all twelve of them
-              unreachable on a phone. Destinations are shown once: "Shop all"
-              repeats across columns, and Sale is both a collection and a top
-              level link. */}
-          {mobileSections(MEGA_MENU, NAV_LINKS).map((section) => (
-            <div key={section.heading} className="flex flex-col gap-3">
-              {section.heading && (
-                <p className="font-display text-[14px] font-medium uppercase tracking-[1.5px] text-muted">
-                  {section.heading}
-                </p>
-              )}
-              {section.links.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="text-[18px]"
-                  onClick={() => setMobileOpen(false)}
+      <AnimatePresence>
+        {mobileOpen && (
+          // Opens the way the desktop mega menu does - same easing, same short
+          // duration, same colour - so the two read as one menu at two widths.
+          // The panel grows from nothing rather than appearing at full height,
+          // which is what stops the page below it from jumping.
+          <motion.div
+            key="mobile"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            className="overflow-hidden border-t border-line bg-[#f0f0ef] text-ink lg:hidden"
+          >
+            {/* The list is taller than a short phone, so it scrolls inside the
+                panel rather than running off the bottom. The cap goes on the
+                inner box, leaving the wrapper free to animate to auto height. */}
+            <div className="flex max-h-[calc(100svh-8rem)] flex-col gap-7 overflow-y-auto px-5 py-6">
+              {/* Every column, not just the first. The collections sit in the
+                  second and third, so showing only Featured left all twelve of
+                  them unreachable on a phone. Destinations are shown once:
+                  "Shop all" repeats across columns, and Sale is both a
+                  collection and a top level link. */}
+              {mobileSections(MEGA_MENU, NAV_LINKS).map((section, s) => (
+                <motion.div
+                  key={section.heading}
+                  className="flex flex-col gap-3"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, ease: EASE, delay: 0.1 + s * 0.06 }}
                 >
-                  {link.label}
-                </Link>
+                  {section.heading && (
+                    <p className="font-display text-[14px] font-medium uppercase tracking-[1.5px] text-muted">
+                      {section.heading}
+                    </p>
+                  )}
+                  {section.links.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="text-[18px]"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </motion.div>
               ))}
             </div>
-          ))}
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
