@@ -13,6 +13,7 @@ the odd one out - so those are rejected for reshooting rather than silently
 producing a mismatched card.
 """
 from PIL import Image
+from scipy import ndimage
 import numpy as np, sys, os
 
 CARD = (238, 238, 238)      # #eee, the product card background
@@ -22,6 +23,7 @@ NEAR, FAR = 10.0, 30.0      # backdrop feather band, in colour distance
 SUBJECT = 24.0              # colour distance that counts as subject
 MIN_RUN = 0.010             # share of a row that must be subject to count
 EDGE = 3                    # px of margin required on every side
+STRAY = 2000                # px: a detached shape bigger than this is not a stray mark
 
 
 class BadFraming(Exception):
@@ -76,6 +78,34 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
     off_side = np.abs(rows_bg - bg).max(axis=1) > SUBJECT
     rows_bg[off_side] = bg
     d = np.abs(src_a - rows_bg[:, None, :]).max(axis=2)
+
+    # The generator sometimes draws a stray interface mark into the backdrop - a
+    # watermark circle in a corner, an avatar dot beside the hip. Left alone it
+    # drags the measured box out to that corner and shrinks the model on the
+    # card, and it survives into the finished picture.
+    #
+    # A mark is a shape that stands clear of the model: it does not touch her
+    # and it falls entirely outside the space she occupies. Loose hair, a tie
+    # end and a sheer hem also come back as separate shapes, but they sit
+    # within her bounds, so bounding the test that way keeps them. A small mark
+    # is wiped, since the backdrop is about to be flattened anyway; a large one
+    # means something is in the frame that should not be there, and the frame
+    # goes back for a reshoot.
+    lab, n = ndimage.label(d > SUBJECT)
+    if n > 1:
+        areas = np.bincount(lab.ravel())[1:]
+        main = int(np.argmax(areas)) + 1
+        rows, cols = np.where(lab == main)
+        top_m, bot_m, left_m, right_m = rows.min(), rows.max(), cols.min(), cols.max()
+        for i, area in enumerate(areas, start=1):
+            if i == main:
+                continue
+            r, c = np.where(lab == i)
+            if top_m <= r.min() and r.max() <= bot_m and left_m <= c.min() and c.max() <= right_m:
+                continue                      # inside her bounds: part of the look
+            if area > STRAY:
+                raise BadFraming(src)
+            d = np.where(lab == i, 0.0, d)
 
     box = subject_box(d)
     if box is None:
