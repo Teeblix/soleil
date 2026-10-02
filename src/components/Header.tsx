@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
+import { COLLECTION_META, type CollectionMeta, type CollectionSlug } from "../lib/catalogue";
 
 import soleilLight from "../assets/common/imgSoleilLight.svg";
 import soleilDark from "../assets/common/imgSoleilDark.svg";
@@ -21,35 +22,48 @@ const NAV_LINKS = [
   { label: "About", to: "/about" },
 ];
 
+const BY_SLUG = Object.fromEntries(COLLECTION_META.map((c) => [c.slug, c])) as Record<
+  CollectionSlug,
+  CollectionMeta
+>;
+
+// Menu entries are built from the catalogue rather than written out, so a
+// collection that does not exist cannot be linked: the slug has to be one of
+// the twelve or this does not compile. The column this replaced listed five
+// fabrics - Ribbed, Mesh, Luxury Lycra and so on - that were never collections,
+// and an unknown slug falls through to All Products, so "Mesh" opened a page
+// titled All Products.
+function col(slug: CollectionSlug) {
+  return { label: BY_SLUG[slug].name, to: `/collections/${slug}` };
+}
+
+// Between them the three columns name all twelve collections exactly once, so
+// every one is reachable from the menu and none is listed twice.
 const MEGA_MENU = [
   {
     heading: "Featured",
-    links: [
-      { label: "New Arrivals", to: "/collections/new-arrivals" },
-      { label: "Sale", to: "/collections/sale" },
-      { label: "Best Sellers", to: "/collections/best-sellers" },
-      { label: "Shop all", to: "/products" },
-    ],
+    links: [col("new-arrivals"), col("sale"), col("best-sellers"), { label: "Shop all", to: "/products" }],
   },
   {
+    // Silhouettes: the shape of the piece.
     heading: "Collections",
     links: [
-      { label: "Ribbed", to: "/collections/ribbed" },
-      { label: "Textured", to: "/collections/textured" },
-      { label: "Mesh", to: "/collections/mesh" },
-      { label: "Recycled Fabric", to: "/collections/recycled-fabric" },
-      { label: "Luxury Lycra", to: "/collections/luxury-lycra" },
+      col("one-piece"),
+      col("triangle"),
+      col("bandeau"),
+      col("high-waisted"),
+      col("three-piece"),
       { label: "Shop all", to: "/collections" },
     ],
   },
   {
+    // What you are actually buying: a top, a bottom, or something covering both.
     heading: "Types",
     links: [
-      { label: "Beach Ready", to: "/products?type=beach-ready" },
-      { label: "Poolside Luxe", to: "/products?type=poolside-luxe" },
-      { label: "Active Swim", to: "/products?type=active-swim" },
-      { label: "Resort Wear", to: "/products?type=resort-wear" },
-      { label: "Sets", to: "/collections/sets" },
+      col("tops"),
+      col("bottoms"),
+      col("sets"),
+      col("cover-ups"),
       { label: "Shop all", to: "/products" },
     ],
   },
@@ -59,6 +73,22 @@ const MEGA_IMAGES = [
   { src: nav1, to: "/collections/new-arrivals" },
   { src: nav2, to: "/collections" },
 ];
+
+type MenuLink = { label: string; to: string };
+
+/** The mega menu and the top level links flattened for the phone menu, with
+ *  each destination kept only the first time it appears. */
+function mobileSections(
+  columns: { heading: string; links: MenuLink[] }[],
+  navLinks: MenuLink[],
+): { heading: string; links: MenuLink[] }[] {
+  const seen = new Set<string>();
+  const take = (links: MenuLink[]) =>
+    links.filter((link) => (seen.has(link.to) ? false : seen.add(link.to)));
+  return [...columns.map((c) => ({ heading: c.heading, links: take(c.links) })),
+          { heading: "", links: take(navLinks) }]
+    .filter((section) => section.links.length > 0);
+}
 
 function Underline({ active }: { active?: boolean }) {
   return (
@@ -225,18 +255,30 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
       </AnimatePresence>
 
       {mobileOpen && (
-        <div className="flex flex-col gap-4 border-t border-line bg-paper px-5 py-6 text-ink lg:hidden">
-          {MEGA_MENU[0].links
-            .filter((link) => !NAV_LINKS.some((nav) => nav.label === link.label))
-            .map((link) => (
-              <Link key={link.label} to={link.to} className="text-[18px]" onClick={() => setMobileOpen(false)}>
-                {link.label}
-              </Link>
-            ))}
-          {NAV_LINKS.map((link) => (
-            <Link key={link.to} to={link.to} className="text-[18px]" onClick={() => setMobileOpen(false)}>
-              {link.label}
-            </Link>
+        <div className="flex flex-col gap-7 border-t border-line bg-paper px-5 py-6 text-ink lg:hidden">
+          {/* Every column, not just the first. The collections sit in the second
+              and third, so showing only Featured left all twelve of them
+              unreachable on a phone. Destinations are shown once: "Shop all"
+              repeats across columns, and Sale is both a collection and a top
+              level link. */}
+          {mobileSections(MEGA_MENU, NAV_LINKS).map((section) => (
+            <div key={section.heading} className="flex flex-col gap-3">
+              {section.heading && (
+                <p className="font-display text-[14px] font-medium uppercase tracking-[1.5px] text-muted">
+                  {section.heading}
+                </p>
+              )}
+              {section.links.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-[18px]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           ))}
         </div>
       )}
