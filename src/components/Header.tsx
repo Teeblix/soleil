@@ -153,8 +153,12 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
 
   return (
     <header
+      // z-30 on the in-flow header too: without it the mega menu, which hangs
+      // below the bar, was painted underneath the next positioned element on
+      // the page - the hero on a collection page, the sticky filter rail
+      // further down - so hovering Shop appeared to do nothing.
       className={`w-full transition-colors duration-300 ${headerBg} ${
-        variant === "solid" ? "relative border-b-[0.35px] border-line" : "absolute top-0 left-0 z-20"
+        variant === "solid" ? "relative z-30 border-b-[0.35px] border-line" : "absolute top-0 left-0 z-20"
       }`}
       onMouseLeave={() => setMenuOpen(false)}
     >

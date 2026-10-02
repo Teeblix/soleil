@@ -94,11 +94,15 @@ export function Products() {
   return (
     <div className="flex w-full flex-col items-center">
       <SaleBar />
-      <Header variant="solid" />
 
-      <section className="relative flex h-[320px] w-full items-end overflow-hidden md:h-[420px]">
+      {/* The header sits over the hero image rather than as a white band above
+          it, the way it does on the home page. No overflow-hidden here: the
+          image and the washes are all inset-0 so nothing overflows, but the
+          mega menu hangs well below a 420px hero and would be clipped. */}
+      <section className="relative flex h-[320px] w-full items-end md:h-[420px]">
         <img src={IMAGERY[key] ?? heroAll} alt="" className="absolute inset-0 h-full w-full object-cover object-top" />
         <div className="absolute inset-0 bg-black/40" />
+        <Header variant="transparent" />
         <div
           className="absolute inset-0"
           style={{ backgroundImage: "linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,0.6) 100%)" }}
