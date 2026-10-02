@@ -67,7 +67,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
               {frames.length > 0 ? (
                 <SpinGallery frames={frames} alt={`${product.name} in ${color}`} />
               ) : (
-                <div className="aspect-[610/626] w-full bg-[#eee]" />
+                <div className="aspect-[302/400] w-full bg-[#eee]" />
               )}
               <FeaturedReview />
             </div>

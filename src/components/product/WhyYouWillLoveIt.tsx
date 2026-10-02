@@ -87,7 +87,9 @@ export function WhyYouWillLoveIt({ product }: { product: Product }) {
           className="aspect-[610/705] w-full overflow-hidden bg-[#eee] lg:w-[610px]"
         >
           {product.back && (
-            <img src={product.back} alt="" className="h-full w-full object-cover object-top" />
+            // Contained, not covered: this is a composed card too, and the box
+            // it sits in is a different shape, so covering would cut the model.
+            <img src={product.back} alt="" className="h-full w-full object-contain" />
           )}
         </motion.div>
       </div>

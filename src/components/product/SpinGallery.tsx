@@ -97,7 +97,12 @@ export function SpinGallery({
   return (
     <div
       ref={box}
-      className={`relative aspect-[610/626] w-full touch-pan-y overflow-hidden bg-[#eee] select-none ${
+      // The card ratio, not the 610x626 the frame was drawn at. These images are
+      // composed cards: the model is measured, scaled and sat on the bottom edge
+      // so every product reads at one size. Putting one in a squarer box and
+      // covering crops the legs away and makes the model look zoomed in, and it
+      // would no longer match the card the shopper clicked.
+      className={`relative aspect-[302/400] w-full touch-pan-y overflow-hidden bg-[#eee] select-none ${
         dragging ? "cursor-grabbing" : "cursor-grab"
       } ${className}`}
       onPointerDown={onPointerDown}
