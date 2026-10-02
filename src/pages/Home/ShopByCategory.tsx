@@ -6,10 +6,10 @@ import bottomsImg from "../../assets/home/categories/bottoms.jpg";
 import setsImg from "../../assets/home/categories/sets.jpg";
 
 const CATEGORIES = [
-  { label: "TOPS", image: topsImg, to: "/products?category=tops", height: "h-[420px] sm:h-[500px]", span: "", focus: "" },
-  { label: "BOTTOMS", image: bottomsImg, to: "/products?category=bottoms", height: "h-[420px] sm:h-[428px]", span: "", focus: "" },
+  { label: "TOPS", image: topsImg, to: "/collections/tops", height: "h-[420px] sm:h-[500px]", span: "", focus: "" },
+  { label: "BOTTOMS", image: bottomsImg, to: "/collections/bottoms", height: "h-[420px] sm:h-[428px]", span: "", focus: "" },
   // Spans both tablet columns, so it crops wide - anchor the top to keep the model's head.
-  { label: "SETS", image: setsImg, to: "/products?category=sets", height: "h-[420px] sm:h-[500px]", span: "sm:col-span-2 lg:col-span-1", focus: "sm:object-top lg:object-center" },
+  { label: "SETS", image: setsImg, to: "/collections/sets", height: "h-[420px] sm:h-[500px]", span: "sm:col-span-2 lg:col-span-1", focus: "sm:object-top lg:object-center" },
 ];
 
 export function ShopByCategory() {

@@ -21,7 +21,7 @@ import flagAU from "../assets/common/flag_au.png";
 
 const SHOP_LINKS = [
   { label: "Shop All", to: "/products" },
-  { label: "Sale", to: "/products?filter=sale" },
+  { label: "Sale", to: "/collections/sale" },
   { label: "Lookbook", to: "/lookbook" },
   { label: "Collections", to: "/collections" },
   { label: "Size Chart", to: "/size-chart" },

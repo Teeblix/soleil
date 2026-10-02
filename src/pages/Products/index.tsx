@@ -79,7 +79,7 @@ export function Products() {
 
   const promo: Promo = {
     ...(collection?.promo ?? ALL_PRODUCTS_PROMO),
-    to: collection ? `/collections/${collection.slug}` : "/products?filter=sale",
+    to: collection ? `/collections/${collection.slug}` : "/collections/sale",
     image: IMAGERY[key] ?? heroAll,
   };
 

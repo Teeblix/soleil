@@ -16,7 +16,7 @@ import nav1 from "../assets/nav/nav1.jpg";
 import nav2 from "../assets/nav/nav2.jpg";
 
 const NAV_LINKS = [
-  { label: "Sale", to: "/products?filter=sale" },
+  { label: "Sale", to: "/collections/sale" },
   { label: "Lookbook", to: "/lookbook" },
   { label: "About", to: "/about" },
 ];
@@ -25,9 +25,9 @@ const MEGA_MENU = [
   {
     heading: "Featured",
     links: [
-      { label: "New Arrivals", to: "/products?filter=new" },
-      { label: "Sale", to: "/products?filter=sale" },
-      { label: "Best Sellers", to: "/products?filter=best-sellers" },
+      { label: "New Arrivals", to: "/collections/new-arrivals" },
+      { label: "Sale", to: "/collections/sale" },
+      { label: "Best Sellers", to: "/collections/best-sellers" },
       { label: "Shop all", to: "/products" },
     ],
   },
@@ -49,14 +49,14 @@ const MEGA_MENU = [
       { label: "Poolside Luxe", to: "/products?type=poolside-luxe" },
       { label: "Active Swim", to: "/products?type=active-swim" },
       { label: "Resort Wear", to: "/products?type=resort-wear" },
-      { label: "Sets", to: "/products?category=sets" },
+      { label: "Sets", to: "/collections/sets" },
       { label: "Shop all", to: "/products" },
     ],
   },
 ];
 
 const MEGA_IMAGES = [
-  { src: nav1, to: "/products?filter=new" },
+  { src: nav1, to: "/collections/new-arrivals" },
   { src: nav2, to: "/collections" },
 ];
 

@@ -13,7 +13,7 @@ const CATEGORIES = [
   {
     number: "01.",
     label: "BANDEAU",
-    to: "/products?category=bandeau",
+    to: "/collections/bandeau",
     image: bandeauImg,
     title: "Bare Your Confidence",
     body: "No straps, no tan lines, no compromises. Made for those who want maximum sun and minimal coverage. Our bandeaus stay in place while you move, swim, and live freely. Effortlessly sexy.",
@@ -21,7 +21,7 @@ const CATEGORIES = [
   {
     number: "02.",
     label: "ONE-PIECE",
-    to: "/products?category=one-piece",
+    to: "/collections/one-piece",
     image: onePieceImg,
     title: "Sculpt your Silhouette",
     body: "Sleek silhouettes designed to flatter every curve. Effortless elegance for those who prefer one piece. Perfect for poolside lounging or active days by the water.",
@@ -29,7 +29,7 @@ const CATEGORIES = [
   {
     number: "03.",
     label: "TRIANGLE",
-    to: "/products?category=triangle",
+    to: "/collections/triangle",
     image: triangleImg,
     title: "Classic Never Fades",
     body: "Adjustable, versatile, and effortlessly cool. Whether you're swimming laps or soaking up the sun, this is the perfect fit that works for everyone. Simple, flattering, and built to fit your body, your way.",
@@ -37,7 +37,7 @@ const CATEGORIES = [
   {
     number: "04.",
     label: "THREE-PIECE",
-    to: "/products?category=three-piece",
+    to: "/collections/three-piece",
     image: threePieceImg,
     title: "Trio. Your Way.",
     body: "Mix, match, layer. Three pieces, endless possibilities. Built for those who want versatility and freedom to style their own look. One set, multiple vibes. Wear them together or style each piece separately.",
