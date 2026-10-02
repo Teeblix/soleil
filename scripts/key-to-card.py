@@ -65,7 +65,10 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
         # whole edge, and hair grazing the top is not a cropped head. The
         # thresholds are set from measured good and bad frames.
         m = np.abs(a.astype(np.float32) - bg).max(axis=2) > SUBJECT
-        if m[0].sum() > 0.25 * w:          # head or shoulders cut by the top
+        # The crown must be clear of the top. Hair reaching the edge is a
+        # cropped head on the card, so the tolerance here is only wide enough
+        # for a few stray pixels, not for a band of hair.
+        if m[0].sum() > 0.02 * w:
             raise BadFraming(src)
         if (m[:, 0].sum() > 0.45 * h) or (m[:, -1].sum() > 0.45 * h):
             raise BadFraming(src)          # body running off a side
@@ -75,10 +78,16 @@ def compose(src: str, dst: str, strict: bool = True) -> int:
         # than every other card.
         if bottom < h - EDGE:
             raise BadFraming(src)
-        # Whether the shot actually contains a head, and whether the model is
-        # framed like the others, is not reliably measurable here - a headless
-        # mannequin crop passes every geometric test. Those are caught by
-        # reviewing each batch as a contact sheet before it is accepted.
+        # A crown starts narrow and widens into the head. If the subject is
+        # already near body width in its very first rows, the frame has cut
+        # straight across the head - which happens a little below the edge as
+        # often as at it, so an edge test alone misses it. Measured across
+        # known frames: intact 0.06-0.14, cut 0.39-0.41.
+        widths = m.sum(axis=1)
+        crown = float(np.median(widths[top:top + 8]))
+        body = float(np.percentile(widths[top:bottom], 90))
+        if body and crown / body > 0.25:
+            raise BadFraming(src)
 
     scale = (FIGURE_H * H) / (bottom - top + 1)
     im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
