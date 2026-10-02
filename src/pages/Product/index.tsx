@@ -64,15 +64,21 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
             ]}
           />
 
-          <div className="flex w-full flex-col gap-10 lg:flex-row lg:gap-[60px]">
-            {/* Gallery and the review that sits under it */}
-            <div className="flex w-full flex-col gap-8 lg:w-[610px] lg:shrink-0">
+          <div className="flex w-full flex-col gap-10 lg:flex-row lg:items-start lg:gap-[60px]">
+            {/* The gallery holds still while the buy column scrolls past it, and
+                releases when the row ends - which is the foot of the size guide.
+                self-start keeps the column its own height: a stretched flex item
+                fills the row and then has nothing left to stick within. */}
+            <div className="w-full lg:sticky lg:top-5 lg:w-[610px] lg:shrink-0 lg:self-start">
               {views.length > 0 ? (
-                <ViewGallery views={views} alt={`${product.name} in ${color}`} />
+                <ViewGallery
+                  views={views}
+                  alt={`${product.name} in ${color}`}
+                  footer={<FeaturedReview />}
+                />
               ) : (
                 <div className="aspect-[302/400] w-full bg-[#eee]" />
               )}
-              <FeaturedReview />
             </div>
 
             {/* Everything you choose and press */}
