@@ -8,7 +8,7 @@ import { Testimonials } from "../../components/Testimonials";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { Stars } from "../../components/shop/Stars";
 import { ComingSoon } from "../ComingSoon";
-import { SpinGallery } from "../../components/product/SpinGallery";
+import { ViewGallery, type View } from "../../components/product/ViewGallery";
 import { ColorSwatches, SizePicker } from "../../components/product/Selectors";
 import { Panel, SizeGuide } from "../../components/product/Panels";
 import { FeaturedReview } from "../../components/product/FeaturedReview";
@@ -37,9 +37,12 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
   const collection = collectionBySlug(product.collection);
   const saved = isFavourite(product.slug);
 
-  // The ring the gallery turns through. Front, back, and back to front: with a
-  // real turntable this becomes the full sequence of angles.
-  const frames = [product.front, product.back].filter(Boolean) as string[];
+  // The views the rail offers. The design draws five thumbnails; a product has
+  // as many as it has been shot for, which today is a front and a back.
+  const views: View[] = [
+    product.front && { src: product.front, label: "Front" },
+    product.back && { src: product.back, label: "Back" },
+  ].filter(Boolean) as View[];
 
   function toggle(panel: string) {
     setOpen((current) => (current === panel ? null : panel));
@@ -64,8 +67,8 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
           <div className="flex w-full flex-col gap-10 lg:flex-row lg:gap-[60px]">
             {/* Gallery and the review that sits under it */}
             <div className="flex w-full flex-col gap-8 lg:w-[610px] lg:shrink-0">
-              {frames.length > 0 ? (
-                <SpinGallery frames={frames} alt={`${product.name} in ${color}`} />
+              {views.length > 0 ? (
+                <ViewGallery views={views} alt={`${product.name} in ${color}`} />
               ) : (
                 <div className="aspect-[302/400] w-full bg-[#eee]" />
               )}
