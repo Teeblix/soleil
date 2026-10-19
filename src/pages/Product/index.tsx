@@ -16,6 +16,7 @@ import { WhyYouWillLoveIt } from "../../components/product/WhyYouWillLoveIt";
 import { YouMayAlsoLike } from "../../components/product/YouMayAlsoLike";
 import { useFavourites } from "../../lib/favourites";
 import { Price, useCurrency } from "../../lib/currency";
+import { useCart } from "../../lib/cart";
 import { PRODUCTS } from "../../lib/shopData";
 import { CARE_INSTRUCTION, SHIPPING_RETURNS, productCopy } from "../../lib/pdp";
 import { collectionBySlug } from "../../lib/catalogue";
@@ -34,6 +35,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
   const [open, setOpen] = useState<string | null>(null);
   const { isFavourite, toggleFavourite } = useFavourites();
   const { format } = useCurrency();
+  const { add } = useCart();
 
   const copy = productCopy(product);
   const collection = collectionBySlug(product.collection);
@@ -48,6 +50,19 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
 
   function toggle(panel: string) {
     setOpen((current) => (current === panel ? null : panel));
+  }
+
+  // The colour and size on the line, not just the product: the same piece in
+  // two sizes is two things to pick and pack.
+  function addToCart() {
+    add({
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      color,
+      size,
+      image: product.front,
+    });
   }
 
   return (
@@ -139,6 +154,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
                       <button
                         type="button"
                         disabled={!product.inStock}
+                        onClick={() => addToCart()}
                         className="group flex h-11 flex-1 items-center justify-center gap-2.5 border border-ink text-[15px] tracking-[0.8px] text-ink transition-colors duration-300 hover:bg-ink hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-ink"
                       >
                         <Bag />
@@ -148,6 +164,7 @@ function ProductDetail({ product }: { product: NonNullable<ReturnType<typeof PRO
                     <button
                       type="button"
                       disabled={!product.inStock}
+                      onClick={() => addToCart()}
                       className="relative h-[53px] w-full overflow-hidden bg-ink text-[15px] tracking-[0.8px] text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
                     >
                       <span className="relative z-10">BUY NOW - {format(product.price)}</span>

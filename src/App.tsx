@@ -9,6 +9,8 @@ import { ComingSoon } from "./pages/ComingSoon";
 import { EASE } from "./lib/motion";
 import { FavouritesProvider } from "./lib/favourites";
 import { CurrencyProvider } from "./lib/currency";
+import { CartProvider } from "./lib/cart";
+import { CartDrawer } from "./components/CartDrawer";
 import { Toasts } from "./components/Toasts";
 
 const STUB_PAGES: { path: string; title: string }[] = [
@@ -73,10 +75,13 @@ function App() {
   return (
     <CurrencyProvider>
       <FavouritesProvider>
-        <BrowserRouter>
-        <AnimatedRoutes />
-        <Toasts />
-        </BrowserRouter>
+        <CartProvider>
+          <BrowserRouter>
+            <AnimatedRoutes />
+            <CartDrawer />
+            <Toasts />
+          </BrowserRouter>
+        </CartProvider>
       </FavouritesProvider>
     </CurrencyProvider>
   );

@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { COLLECTION_META, type CollectionMeta, type CollectionSlug } from "../lib/catalogue";
+import { useCart } from "../lib/cart";
 import { EASE } from "../lib/motion";
 
 import soleilLight from "../assets/common/imgSoleilLight.svg";
@@ -129,6 +130,79 @@ function IconButton({ label, icon, to, onClick }: { label: string; icon: string;
   );
 }
 
+/**
+ * The account control, as a round avatar rather than a line icon.
+ *
+ * Nobody is signed in, so it shows initials on a tinted disc: a photograph
+ * would be a lie and a silhouette is just the line icon in a circle. The ring
+ * is what carries it over a photograph in the transparent header.
+ */
+function Avatar({ light }: { light: boolean }) {
+  return (
+    <Link
+      to="/account"
+      aria-label="Account"
+      className="group relative flex size-6 items-center justify-center"
+    >
+      <span
+        className={`flex size-6 items-center justify-center rounded-full text-[10px] font-medium tracking-[0.5px] transition-colors duration-300 ${
+          light
+            ? "bg-white/15 text-white ring-1 ring-white/70 group-hover:bg-white/25"
+            : "bg-ink/5 text-ink ring-1 ring-ink/25 group-hover:bg-ink/10"
+        }`}
+      >
+        SA
+      </span>
+      <Tooltip>Account</Tooltip>
+    </Link>
+  );
+}
+
+/** The bag, with a count that only appears once there is something in it. */
+function CartButton({ light }: { light: boolean }) {
+  const { count, setOpen } = useCart();
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen(true)}
+      aria-label={count > 0 ? `Cart, ${count} item${count === 1 ? "" : "s"}` : "Cart"}
+      className="group relative flex size-6 items-center justify-center"
+    >
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" className={light ? "text-white" : "text-ink"}>
+        <path d="M3.4 6.6h15.2l-1.3 12.6H4.7L3.4 6.6z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+        <path d="M7.7 9.2V5.6a3.3 3.3 0 0 1 6.6 0v3.6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      </svg>
+      <AnimatePresence>
+        {count > 0 && (
+          <motion.span
+            key={count}
+            initial={{ scale: 0.4, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.4, opacity: 0 }}
+            transition={{ duration: 0.25, ease: EASE }}
+            className="absolute -right-1.5 -top-1 flex min-w-[17px] items-center justify-center rounded-full bg-ink px-1 text-[10px] font-medium leading-[17px] text-white ring-2 ring-paper"
+          >
+            {count}
+          </motion.span>
+        )}
+      </AnimatePresence>
+      <Tooltip>Cart</Tooltip>
+    </button>
+  );
+}
+
+/** Shared with IconButton so every control in the row labels itself the same. */
+function Tooltip({ children }: { children: ReactNode }) {
+  return (
+    <span
+      role="tooltip"
+      className="pointer-events-none absolute left-1/2 top-full mt-3 hidden -translate-x-1/2 whitespace-nowrap rounded-[4px] bg-ink px-2.5 py-1 text-[13px] text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 lg:block before:absolute before:-top-1 before:left-1/2 before:size-2 before:-translate-x-1/2 before:rotate-45 before:bg-ink"
+    >
+      {children}
+    </span>
+  );
+}
+
 function MegaMenuLink({ to, children }: { to: string; children: ReactNode }) {
   return (
     <Link to={to} className="group relative inline-block w-max text-[16px] leading-tight">
@@ -203,37 +277,43 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           ))}
         </nav>
 
-        <div className="hidden items-center gap-10 lg:flex xl:gap-14" onMouseEnter={() => setMenuOpen(false)}>
-          <IconButton label="Search" icon={icons.search} />
-          <IconButton label="Account" icon={icons.user} to="/account" />
-          <IconButton label="Cart" icon={icons.bag} to="/cart" />
-        </div>
-
-        {/* The three rules are stacked on the same centre line and held apart by
-            a translate, so opening the menu only has to drop that translate and
-            rotate the outer two into a cross. */}
-        <button
-          className={`relative size-6 lg:hidden ${textColor}`}
-          aria-label={mobileOpen ? "Close menu" : "Menu"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
+        {/* On a phone these sit beside the hamburger rather than being hidden
+            behind it: search, account and cart are what people reach for, and
+            burying them a tap deep inside a menu is a tap too many. */}
+        <div
+          className="flex items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14"
+          onMouseEnter={() => setMenuOpen(false)}
         >
-          <span
-            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
-              mobileOpen ? "rotate-45" : "-translate-y-[5px]"
-            }`}
-          />
-          <span
-            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-opacity duration-200 ${
-              mobileOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
-              mobileOpen ? "-rotate-45" : "translate-y-[5px]"
-            }`}
-          />
-        </button>
+          <IconButton label="Search" icon={icons.search} />
+          <Avatar light={isLight} />
+          <CartButton light={isLight} />
+
+          {/* The three rules are stacked on the same centre line and held apart
+              by a translate, so opening the menu only has to drop that
+              translate and rotate the outer two into a cross. */}
+          <button
+            className={`relative size-6 lg:hidden ${textColor}`}
+            aria-label={mobileOpen ? "Close menu" : "Menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+          >
+            <span
+              className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
+                mobileOpen ? "rotate-45" : "-translate-y-[5px]"
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-opacity duration-200 ${
+                mobileOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-1/2 block h-px w-6 bg-current transition-all duration-300 ease-out ${
+                mobileOpen ? "-rotate-45" : "translate-y-[5px]"
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
