@@ -7,12 +7,6 @@ import { EASE } from "../lib/motion";
 
 import soleilLight from "../assets/common/imgSoleilLight.svg";
 import soleilDark from "../assets/common/imgSoleilDark.svg";
-import searchLight from "../assets/common/imgSearchLight.svg";
-import searchDark from "../assets/common/imgSearchDark.svg";
-import userLight from "../assets/common/imgUserLight.svg";
-import userDark from "../assets/common/imgUserDark.svg";
-import bagLight from "../assets/common/imgBagLight.svg";
-import bagDark from "../assets/common/imgBagDark.svg";
 import chevronLight from "../assets/common/imgChevronDown.svg";
 import chevronDark from "../assets/common/imgChevronUp.svg";
 import nav1 from "../assets/nav/nav1.jpg";
@@ -106,36 +100,12 @@ function Underline({ active }: { active?: boolean }) {
   );
 }
 
-function IconButton({ label, icon, to, onClick }: { label: string; icon: string; to?: string; onClick?: () => void }) {
-  const content = (
-    <>
-      <img src={icon} alt="" className="size-6" />
-      <span
-        role="tooltip"
-        className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-[4px] bg-ink px-2.5 py-1 text-[13px] text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 before:absolute before:-top-1 before:left-1/2 before:size-2 before:-translate-x-1/2 before:rotate-45 before:bg-ink"
-      >
-        {label}
-      </span>
-    </>
-  );
-  const className = "group relative flex size-6 items-center justify-center";
-  return to ? (
-    <Link to={to} aria-label={label} className={className}>
-      {content}
-    </Link>
-  ) : (
-    <button aria-label={label} onClick={onClick} className={className}>
-      {content}
-    </button>
-  );
-}
-
 /**
  * The account control, as a round avatar rather than a line icon.
  *
  * Nobody is signed in, so it shows initials on a tinted disc: a photograph
  * would be a lie and a silhouette is just the line icon in a circle. The ring
- * is what carries it over a photograph in the transparent header.
+ * is what carries it over a photograph in the floating header.
  */
 function Avatar({ light }: { light: boolean }) {
   return (
@@ -168,7 +138,14 @@ function CartButton({ light }: { light: boolean }) {
       aria-label={count > 0 ? `Cart, ${count} item${count === 1 ? "" : "s"}` : "Cart"}
       className="group relative flex size-6 items-center justify-center"
     >
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" className={light ? "text-white" : "text-ink"}>
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 22 22"
+        fill="none"
+        aria-hidden="true"
+        className={light ? "text-white" : "text-ink"}
+      >
         <path d="M3.4 6.6h15.2l-1.3 12.6H4.7L3.4 6.6z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
         <path d="M7.7 9.2V5.6a3.3 3.3 0 0 1 6.6 0v3.6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
@@ -191,7 +168,7 @@ function CartButton({ light }: { light: boolean }) {
   );
 }
 
-/** Shared with IconButton so every control in the row labels itself the same. */
+/** Pointer-only, so a phone is not left with a label it cannot dismiss. */
 function Tooltip({ children }: { children: ReactNode }) {
   return (
     <span
@@ -225,9 +202,6 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
   const textColor = isLight ? "text-white" : "text-ink";
   const logo = isLight ? soleilLight : soleilDark;
   const chevron = isLight ? chevronLight : chevronDark;
-  const icons = isLight
-    ? { search: searchLight, user: userLight, bag: bagLight }
-    : { search: searchDark, user: userDark, bag: bagDark };
 
   const headerBg = anyMenuOpen ? "bg-[#f0f0ef]" : variant === "solid" ? "bg-paper" : "";
 
@@ -284,7 +258,6 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           className="flex items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14"
           onMouseEnter={() => setMenuOpen(false)}
         >
-          <IconButton label="Search" icon={icons.search} />
           <Avatar light={isLight} />
           <CartButton light={isLight} />
 
@@ -374,7 +347,13 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="overflow-hidden border-t border-line bg-[#f0f0ef] text-ink lg:hidden"
+            // Hung off the bar rather than sitting in the flow beneath it. In
+            // the flow it pushed the page down on any screen whose header is
+            // in the flow too - the product and collections pages - while the
+            // home page, whose header floats, had it overlay. Now every page
+            // behaves the same way, and the same way the desktop mega menu
+            // already did.
+            className="absolute inset-x-0 top-full z-40 overflow-hidden border-t border-line bg-[#f0f0ef] text-ink lg:hidden"
           >
             {/* The list is taller than a short phone, so it scrolls inside the
                 panel rather than running off the bottom. The cap goes on the
