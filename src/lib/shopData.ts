@@ -14,6 +14,8 @@ export type Product = {
   /** The written description the imagery was shot from; the detail page builds
    *  its copy out of it rather than carrying a second, driftable blurb. */
   garment: string;
+  /** Catalogue position, used as the tie-break when two results rank equally. */
+  order: number;
   /** Resolved asset URLs. Undefined until that product's photography exists. */
   front?: string;
   back?: string;

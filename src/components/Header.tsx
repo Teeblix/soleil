@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { COLLECTION_META, type CollectionMeta, type CollectionSlug } from "../lib/catalogue";
 import { useCart } from "../lib/cart";
+import { SearchPanel } from "./SearchPanel";
 import { EASE } from "../lib/motion";
 
 import soleilLight from "../assets/common/imgSoleilLight.svg";
@@ -100,6 +101,31 @@ function Underline({ active }: { active?: boolean }) {
   );
 }
 
+/** Opens the search sheet. Drawn inline so it inherits the bar's colour. */
+function SearchButton({ light, onClick }: { light: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Search"
+      className="group relative flex size-6 items-center justify-center"
+    >
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 22 22"
+        fill="none"
+        aria-hidden="true"
+        className={light ? "text-white" : "text-ink"}
+      >
+        <circle cx="9.6" cy="9.6" r="6.9" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M14.7 14.7L19.3 19.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      </svg>
+      <Tooltip>Search</Tooltip>
+    </button>
+  );
+}
+
 /**
  * The account control, as a round avatar rather than a line icon.
  *
@@ -192,6 +218,7 @@ function MegaMenuLink({ to, children }: { to: string; children: ReactNode }) {
 export function Header({ variant = "transparent" }: { variant?: "transparent" | "solid" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // Either menu being open fills the bar and darkens its contents. The phone
   // menu used to be left out of this, so on a page with a transparent header
@@ -258,6 +285,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           className="flex items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14"
           onMouseEnter={() => setMenuOpen(false)}
         >
+          <SearchButton light={isLight} onClick={() => setSearchOpen(true)} />
           <Avatar light={isLight} />
           <CartButton light={isLight} />
 
@@ -393,6 +421,7 @@ export function Header({ variant = "transparent" }: { variant?: "transparent" | 
           </motion.div>
         )}
       </AnimatePresence>
+      <SearchPanel open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
